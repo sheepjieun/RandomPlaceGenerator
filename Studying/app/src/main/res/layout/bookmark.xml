@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bookmark_line_1"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <!-- 지역 버튼 !-->
+        <Button
+            android:id="@+id/slide_down_list"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginRight="60dp"
+            android:text="목록"
+            android:layout_marginLeft="15dp"
+            android:drawableRight="@drawable/slide_down"
+            android:textColor="@color/black" />
+
+        <!-- 북마크 텍스트 !-->
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@+id/bookmark_text"
+            android:text="북마크"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/map"
+            android:src="@drawable/map"
+            android:backgroundTint="@color/white"
+            android:layout_marginLeft="90dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:id="@+id/text_line_2"
+        app:layout_constraintTop_toBottomOf="@+id/bookmark_line_1"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="장소"
+            android:textSize="18dp"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="코스"
+            android:textSize="18dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D9D9D9"
+        android:layout_marginTop="10dp"
+        android:id="@+id/main_line_1"
+        app:layout_constraintTop_toBottomOf="@+id/text_line_2"/>
+
+    <LinearLayout
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:id="@+id/img_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_line_1">
+
+        <ImageButton
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_3"
+            android:backgroundTint="@color/white"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="장소명 -> 장소명 -> 장"
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

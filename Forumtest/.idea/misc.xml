@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.255" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/drawable/d_community.xml" value="0.255" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/drawable/ic_launcher_background.xml" value="0.255" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/layout/activity_main.xml" value="0.3423913043478261" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/layout/bookmark.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/layout/community.xml" value="0.2581967213114754" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/layout/communty_main.xml" value="0.22644927536231885" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/layout/countlayout.xml" value="0.3423913043478261" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/layout/footer.xml" value="0.25" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/layout/header.xml" value="0.3423913043478261" />
+        <entry key="..\:/Users/user/jisung1/Forumtest/app/src/main/res/layout/write.xml" value="0.22" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

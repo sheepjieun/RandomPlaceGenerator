@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#FFFF00">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <AutoCompleteTextView
+        android:layout_marginTop="10dp"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/autoCompleteTextView1"
+        android:completionHint="선택하세요"
+        android:completionThreshold="2"
+        android:hint="날짜를 선택하세요"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="포스터 보기"
+        android:backgroundTint="@color/black"
+        android:id="@+id/btnposter"
+        app:layout_constraintLeft_toRightOf="@id/autoCompleteTextView1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+        <ViewFlipper
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/viewflipper1"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/autoCompleteTextView1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/blakcimg"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/black2img"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/black3img"/>
+
+        </ViewFlipper>
+
+        <ViewFlipper
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/viewflipper2"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/autoCompleteTextView1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/owl1"
+                android:src="@drawable/owlimg"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/owl2"
+                android:src="@drawable/owl2img"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/owl3"
+                android:src="@drawable/owl3img"/>
+
+    </ViewFlipper>
+
+    <ViewFlipper
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/viewflipper3"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/autoCompleteTextView1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+             <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/app1"
+                android:src="@drawable/appimg"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/app2"
+                android:src="@drawable/app2img"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/app3"
+                android:src="@drawable/app3img"/>
+    </ViewFlipper>
+
+    <ViewFlipper
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/viewflipper4"
+        android:visibility="invisible"
+
+        app:layout_constraintTop_toBottomOf="@id/autoCompleteTextView1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/upo1"
+                android:src="@drawable/upoimg"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/upo2"
+                android:src="@drawable/upo2img"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/upo3"
+                android:src="@drawable/upo3img"/>
+    </ViewFlipper>
+
+
+
+    <Button
+        android:id="@+id/btnback"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:text="이전"
+        android:visibility="invisible"
+        android:backgroundTint="#F44336"
+        app:layout_constraintTop_toBottomOf="@id/viewflipper1"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/btnnext"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="70dp"
+        android:text="다음"
+        android:visibility="invisible"
+        android:backgroundTint="#F44336"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewflipper1" />
+
+    <TimePicker
+        android:id="@+id/TimePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/btnback"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:id="@+id/txt"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/TimePicker1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

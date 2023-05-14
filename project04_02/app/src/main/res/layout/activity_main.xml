@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택을 시작하시겟습니까?"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/start"
+        android:text="시작함"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="좋아하는 애완동물은?"
+        android:id="@+id/txt2"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        android:layout_margin="10dp"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:id="@+id/rgroup1">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dog"
+            android:layout_margin="5dp"
+            android:text="강아지"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cat"
+            android:text="고양이"
+            android:layout_margin="5dp" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rabbit"
+            android:text="토끼"
+            android:layout_margin="5dp"/>
+    </RadioGroup>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ok"
+        android:layout_margin="10dp"
+        android:visibility="invisible"
+        android:src="@drawable/ok" />
+
+    <ImageView
+        android:id="@+id/imgPet"
+        android:layout_width="240dp"
+        android:layout_height="160dp"
+        android:background="#3F51B5"
+        android:scaleType="fitCenter"
+        android:visibility="invisible" />
+
+
+</LinearLayout>

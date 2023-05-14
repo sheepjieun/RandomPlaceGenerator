@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="선택을 시작하시겠습니까?"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/start"
+        android:text="시작함 "/>
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="좋아하는 안드로이드 버전은?"
+        android:layout_margin="10dp"/>
+    <RadioGroup
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rgroup1">
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/and9"
+            android:text="안드로이드 9"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/and10"
+            android:text="안드로이드 10"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/and11"
+            android:text="안드로이드 11"/>
+    </RadioGroup>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:id="@+id/and"
+        android:visibility="visible"
+        android:scaleType="fitCenter"/>
+    <Button
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stop"
+        android:text="종료"
+        android:onClick="Clicked"
+        android:backgroundTint="@color/teal_700"/>
+    <Button
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reset"
+        android:text="처음으로"
+        android:onClick="Clicked"
+        android:backgroundTint="@color/teal_700"/>
+
+
+
+
+</LinearLayout>
