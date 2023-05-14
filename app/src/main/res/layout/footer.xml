@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:ignore="MissingConstraints">
 
     <!-- 이미지 Layout  !-->
     <LinearLayout
@@ -16,12 +17,13 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <ImageButton
-            android:background="@color/white"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
             android:id="@+id/home_img"
-            android:src="@drawable/home"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:src="@drawable/home" />
+
         <ImageButton
             android:background="@color/white"
             android:layout_width="0dp"
