@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@id/alarm"
+        android:id="@+id/alarm"
         android:layout_width="24dp"
         android:layout_height="22dp"
         android:layout_marginTop="30dp"
