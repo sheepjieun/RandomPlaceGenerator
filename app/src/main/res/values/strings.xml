@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">MobileProject</string>
+    <string name="app_name">Login</string>
+    <string name="terms">아래 [동의하고 가입하기] 버튼을 클릭하면, \n<u><font color="#0000ff">이용 약관</font></u> 및 <u><font color="#0000ff">개인 정보 취급 방침</font></u> 에 동의하게 됩니다.</string>
 </resources>
