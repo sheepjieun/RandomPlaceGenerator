@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_recommend1.xml" value="0.22" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_recommend2.xml" value="0.1984375" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_recommend3.xml" value="0.1" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_recommend4.xml" value="0.1" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_recommend5.xml" value="0.1" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/footer.xml" value="0.12135416666666667" />
       </map>
     </option>
   </component>
