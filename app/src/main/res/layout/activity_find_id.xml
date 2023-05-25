@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -9,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="비밀번호 재설정"
+        android:text="아이디 찾기"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -39,10 +40,10 @@
         android:background="#D0B4B4"/>
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/tv_content"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:text="회원가입 시 등록하신 아이디와 비밀번호 힌트로 \n비밀번호를 재설정 할 수 있습니다."
+        android:text="회원가입 시 등록하신 휴대폰 번호로 \n아이디를 찾을 수 있습니다."
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -50,53 +51,31 @@
         app:layout_constraintTop_toBottomOf="@id/line"
         android:layout_marginTop="30dp"
         android:gravity="center"/>
+
     <EditText
-        android:id="@+id/id"
+        android:id="@+id/et_phoneNumber"
         android:layout_width="300dp"
         android:layout_height="45dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content"
         android:background="@drawable/border"
         android:padding="10dp"
-        android:layout_marginTop="30dp"
-        android:hint="아이디 입력"
-        android:textSize="15dp"
-        android:textColorHint="#B4AFAF"/>
-    <TextView
-        android:id="@+id/hint"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id"
-        android:layout_marginTop="30dp"
-        android:hint="힌트 내용 출력"
-        android:textSize="15dp"
-        android:textColorHint="#B4AFAF"/>
-    <EditText
-        android:id="@+id/hint_answer"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hint"
-        android:background="@drawable/border"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        android:hint="힌트 답변 입력"
+        android:layout_marginTop="25dp"
+        android:hint="휴대폰 번호 입력"
         android:textSize="15dp"
         android:textColorHint="#B4AFAF"/>
 
     <ImageButton
-        android:id="@+id/btn_login"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:id="@+id/btn_findId"
+        android:layout_width="301dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="20dp"
         android:background="@color/white"
         android:scaleType="fitCenter"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/hint_answer"
+        android:src="@drawable/btn_findid"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:src="@drawable/btn_reset"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_phoneNumber" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
