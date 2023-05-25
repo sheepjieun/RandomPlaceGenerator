@@ -14,7 +14,25 @@
         android:theme="@style/Theme.MobileProject"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HintAnswerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InputIdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FindIdResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FindIdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

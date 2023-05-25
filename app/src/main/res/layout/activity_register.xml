@@ -220,7 +220,7 @@
         android:hint="힌트 답변 입력"
         android:textSize="15dp"
         android:textColorHint="#B4AFAF"/>
-    
+
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="380dp"
