@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="text_id" type="id" />
-    <item name="text_id" type="id" />
     <item name="text_pass" type="id" />
     <item name="et_retryPassword" type="id" />
     <item name="text_phoneNum" type="id" />

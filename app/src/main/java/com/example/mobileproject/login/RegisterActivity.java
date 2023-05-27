@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.mobileproject.R;
@@ -30,8 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText et_password, et_retryPassword;
     private EditText et_phoneNumber, et_nickname;
     private EditText et_hint, et_hintAnswer;
-    //뒤로가기, 아이디중복확인, 회원가입 버튼
-    private Button btn_back, btn_checkId, btn_registerOK;
     Boolean checkId = false;
 
     @Override
@@ -49,6 +49,11 @@ public class RegisterActivity extends AppCompatActivity {
         et_nickname = findViewById(R.id.et_nickname);
         et_hint = findViewById(R.id.et_hint);
         et_hintAnswer = findViewById(R.id.et_hintAnswer);
+
+        //뒤로가기, 아이디중복확인, 회원가입 버튼
+        ImageButton btn_back = findViewById(R.id.btn_back);
+        Button btn_checkId = findViewById(R.id.btn_checkId);
+        ImageButton btn_registerOK = findViewById(R.id.btn_registerOK);
 
         AlertDialog.Builder dlg = new AlertDialog.Builder(RegisterActivity.this);
 
@@ -81,8 +86,14 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     if (task.getResult().isEmpty()) {
                                         // 중복되지 않은 이메일인 경우
-                                        dlg.setMessage("사용할 수 있는 이메일입니다.");
-                                        checkId = true;
+                                        dlg.setMessage("사용할 수 있는 이메일입니다.")
+                                                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(DialogInterface dialog, int which) {
+                                                                dialog.dismiss(); // 대화상자 닫기
+                                                            }
+                                                        });
+                                                        checkId = true;
                                     } else {
                                         // 중복된 이메일인 경우
                                         dlg.setMessage("중복된 이메일입니다.");
@@ -103,23 +114,23 @@ public class RegisterActivity extends AppCompatActivity {
         btn_registerOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO if (중복확인 안 되었으면) 대화상자 띄우기 '아이디 중복확인은 필수입니다!' [확인]
-                //TODO if (et_password == et_retryPassword 일 때만)
-
                 if (checkId == false) {
                     dlg.setMessage("아이디 중복확인은 필수입니다!");
+                    dlg.show();
                 } else {
-                    if (et_password != et_retryPassword) {
+                    String strId = et_id.getText().toString();
+                    String strPw = et_password.getText().toString();
+                    String strRetryPw = et_retryPassword.getText().toString();
+                    String strPhoneNumber = et_phoneNumber.getText().toString();
+                    String strNickname = et_nickname.getText().toString();
+                    String strPasswordHint = et_hint.getText().toString();
+                    String strPasswordHintAnswer = et_hintAnswer.getText().toString();
+
+                    if (!strPw.equals(strRetryPw)) {
                         dlg.setTitle("비밀번호 확인");
                         dlg.setMessage("비밀번호를 다시 한 번 확인하십시오.");
+                        dlg.show();
                     } else {
-                        String strId = et_id.getText().toString();
-                        String strPw = et_password.getText().toString();
-                        String strPhoneNumber = et_phoneNumber.getText().toString();
-                        String strNickname = et_nickname.getText().toString();
-                        String strPasswordHint = et_hint.getText().toString();
-                        String strPasswordHintAnswer = et_hintAnswer.getText().toString();
-
                         //Firebase Auth 진행
                         firebaseAuth.createUserWithEmailAndPassword(strId, strPw)
                                 .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -147,7 +158,16 @@ public class RegisterActivity extends AppCompatActivity {
                                                         @Override
                                                         public void onComplete(@NonNull Task<Void> task) {
                                                             if (task.isSuccessful()) {
-                                                                Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                                                                dlg.setTitle("회원가입 완료");
+                                                                dlg.setMessage("회원가입이 완료되었습니다.")
+                                                                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                                                            @Override
+                                                                            public void onClick(DialogInterface dialog, int which) {
+                                                                                dialog.dismiss(); // 대화상자 닫기
+                                                                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                                                                startActivity(intent);
+                                                                            }
+                                                                        });
                                                             } else {
                                                                 Toast.makeText(RegisterActivity.this, "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT).show();
                                                             }

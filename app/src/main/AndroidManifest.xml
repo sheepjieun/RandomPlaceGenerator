@@ -14,22 +14,22 @@
         android:theme="@style/Theme.MobileProject"
         tools:targetApi="31">
         <activity
-            android:name=".ResetPasswordActivity"
+            android:name=".login.ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".HintAnswerActivity"
+            android:name=".login.HintAnswerActivity"
             android:exported="false" />
         <activity
-            android:name=".InputIdActivity"
+            android:name=".login.InputIdActivity"
             android:exported="false" />
         <activity
-            android:name=".FindIdResultActivity"
+            android:name=".login.FindIdResultActivity"
             android:exported="false" />
         <activity
-            android:name=".FindIdActivity"
+            android:name=".login.FindIdActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".login.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".login.LoginActivity"
