@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bookmark.map.mapCourseCategoryActivity">
+
+    <ImageButton
+        android:id="@+id/mapBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/white"
+        android:src="@drawable/back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="코스 추천"
+        android:textSize="25sp" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/category_img"
+        android:layout_width="21dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="52dp"
+        android:src="@drawable/img_category"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapBack" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="카테고리 설정"
+        app:layout_constraintTop_toTopOf="@+id/category_img"
+        app:layout_constraintLeft_toRightOf="@+id/category_img"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="-5dp"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/category_img"
+        android:src="@drawable/img_line"
+        android:layout_marginTop="13dp"/>
+
+    <ImageButton
+        android:id="@+id/btnMapRestaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/white"
+        android:src="@drawable/btn_restaurant"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_img" />
+
+    <ImageButton
+        android:id="@+id/btnMapCafe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/white"
+        android:src="@drawable/btn_cafe"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_img" />
+
+
+    <ImageButton
+        android:id="@+id/btnMapWalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="112dp"
+        android:background="@color/white"
+        android:src="@drawable/btn_walk"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_img" />
+
+    <ImageButton
+        android:id="@+id/btnMapCulture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="112dp"
+        android:background="@color/white"
+        android:src="@drawable/btn_culture"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_img" />
+
+    <ImageButton
+        android:id="@+id/btnMapShopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="184dp"
+        android:background="@color/white"
+        android:src="@drawable/btn_shopping"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_img" />
+
+    <ImageButton
+        android:id="@+id/btnMapPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="184dp"
+        android:background="@color/white"
+        android:src="@drawable/btn_play"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_img" />
+
+    <ImageButton
+        android:id="@+id/btnMapVacation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="252dp"
+        android:background="@color/white"
+        android:src="@drawable/btn_vacation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_img" />
+
+
+    <ImageView
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_line"
+        app:layout_constraintTop_toBottomOf="@+id/btnMapVacation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="25dp"/>
+
+    <ImageButton
+        android:id="@+id/mapCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/white"
+        android:src="@drawable/btn_cancel"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+    <ImageView
+        android:id="@+id/imgMapSelect1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="104dp"
+        android:src="@drawable/img_restaurant"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/line2" />
+
+    <ImageView
+        android:id="@+id/imgMapSelect2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="104dp"
+        android:src="@drawable/img_restaurant"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/line2" />
+
+    <ImageView
+        android:id="@+id/imgMapSelect3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="296dp"
+        android:layout_marginTop="104dp"
+        android:src="@drawable/img_restaurant"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/line2" />
+
+    <ImageButton
+        android:id="@+id/mapNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="648dp"
+        android:background="@color/white"
+        android:src="@drawable/btn_next"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="-15dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="50dp">
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
