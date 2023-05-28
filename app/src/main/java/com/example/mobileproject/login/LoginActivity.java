@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.mobileproject.R;
+import com.example.mobileproject.util.DialogUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -38,19 +39,18 @@ public class LoginActivity extends AppCompatActivity {
 
         et_id = findViewById(R.id.et_id);
         et_password = findViewById(R.id.et_password);
-        //로그인버튼
         ImageButton btn_login = findViewById(R.id.btn_login);
         Button btn_findId = findViewById(R.id.btn_findId);
         Button btn_findPassword = findViewById(R.id.btn_findPassword);
-        //아이디 찾기, 비밀번호 찾기, 회원가입 버튼
         Button btn_register = findViewById(R.id.btn_register);
 
         //로그인 버튼 클릭 시
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String strId = et_id.getText().toString();
-                String strPw = et_password.getText().toString();
+        btn_login.setOnClickListener(v -> {
+            String strId = et_id.getText().toString();
+            String strPw = et_password.getText().toString();
+            if (strId.isEmpty() || strPw.isEmpty()) {
+                DialogUtil.showAlertDialog(LoginActivity.this, "로그인", "아이디 혹은 비밀번호를 입력해주세요!", null);
+            } else {
                 //friebase 로그인 시도
                 firebaseAuth.signInWithEmailAndPassword(strId, strPw)
                         .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
@@ -63,44 +63,34 @@ public class LoginActivity extends AppCompatActivity {
                                     //startActivity(intent);
                                     //finish(); //로그인 완료 시 현재 액티비티 파괴
                                 } else { //로그인 실패 시
-                                    Toast.makeText(LoginActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
+                                    DialogUtil.showAlertDialog(LoginActivity.this, "로그인 실패", "아이디 혹은 비밀번호를 확인하여 다시 입력해주세요!", null);
                                     Log.d("LoginActivity", "로그인 실패: " + task.getException().getMessage());
                                 }
-                             }
+                            }
                         });
             }
         });
 
         //회원가입 버튼 클릭 시
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Log.e("LoginActivity", "회원가입 버튼 클릭 실패: " + e.toString());
-                }
+        btn_register.setOnClickListener(v -> {
+            try {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            } catch (Exception e) {
+                Log.e("LoginActivity", "회원가입 버튼 클릭 실패: " + e.toString());
             }
         });
 
         //아이디 찾기 버튼 클릭 시
-        btn_findId.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, FindIdActivity.class);
-                startActivity(intent);
-                Log.d("LoginActivity", "아이디찾기 버튼 클릭");
-            }
+        btn_findId.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, FindIdActivity.class);
+            startActivity(intent);
         });
+
         //비밀번호 찾기 버튼 클릭 시
-        btn_findPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, InputIdActivity.class);
-                startActivity(intent);
-                Log.d("LoginActivity", "비밀번호찾기 버튼 클릭");
-            }
+        btn_findPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, InputIdActivity.class);
+            startActivity(intent);
         });
     }
 }

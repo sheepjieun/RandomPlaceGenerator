@@ -2,6 +2,7 @@ package com.example.mobileproject.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobileproject.R;
+import com.example.mobileproject.util.DialogUtil;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -62,13 +64,18 @@ public class ResetPasswordActivity extends AppCompatActivity {
                                         .document(uid)
                                         .update("password", newPassword)
                                         .addOnSuccessListener(aVoid -> {
-                                            Toast.makeText(ResetPasswordActivity.this, "비밀번호가 업데이트되었습니다.", Toast.LENGTH_SHORT).show();
-                                            Intent ResetPasswordActivityIntent = new Intent(ResetPasswordActivity.this, LoginActivity.class);
-                                            startActivity(ResetPasswordActivityIntent);
-                                            finish(); // 현재 액티비티 종료
+                                            DialogUtil.showAlertDialog(ResetPasswordActivity.this, "비밀번호 찾기", "비밀번호가 업데이트되었습니다.", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    Intent ResetPasswordActivityIntent = new Intent(ResetPasswordActivity.this, LoginActivity.class);
+                                                    startActivity(ResetPasswordActivityIntent);
+                                                    finish(); // 현재 액티비티 종료
+                                                    dialog.dismiss(); // 대화상자 닫기
+                                                }
+                                            });
                                         })
                                         .addOnFailureListener(e -> {
-                                            Toast.makeText(ResetPasswordActivity.this, "비밀번호 업데이트에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                            DialogUtil.showAlertDialog(ResetPasswordActivity.this, "비밀번호 찾기", "비밀번호 업데이트에 실패했습니다.", null);
                                             Log.d("ResetPasswordActivity", "Error updating password: " + e.getMessage());
                                         });
                             } else {
