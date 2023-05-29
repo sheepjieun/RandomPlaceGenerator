@@ -1,4 +1,4 @@
-package com.example.mobileproject.bookmark.cos;
+package com.example.mobileproject.bookmark.course;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

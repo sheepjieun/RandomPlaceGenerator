@@ -45,6 +45,8 @@ public class BookmarkPlaceListItemAdapter extends RecyclerView.Adapter<BookmarkP
         holder.placeName.setText(arrayList.get(position).getPlaceName());
         holder.placeLocation.setText(arrayList.get(position).getPlaceLocation());
 
+        holder.itemView.setBackgroundResource(R.drawable.layout_place_shape);
+
         // 뷰 클릭 리스너 설정
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
