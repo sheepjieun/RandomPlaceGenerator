@@ -60,7 +60,7 @@ public class InputIdActivity extends AppCompatActivity {
         });
 
         //뒤로가기 버튼 클릭 시 - 로그인 화면으로 이동
-        btn_ok.setOnClickListener(v -> {
+        btn_back.setOnClickListener(v -> {
             Intent BackIntent = new Intent(InputIdActivity.this, LoginActivity.class);
             startActivity(BackIntent);
         });

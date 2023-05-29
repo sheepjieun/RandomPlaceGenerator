@@ -82,6 +82,8 @@ public class RegisterActivity extends AppCompatActivity {
                 public void onUserNotFound(String errorMessage) {
                     //중복되지 않은 이메일
                     DialogUtil.showAlertDialog(RegisterActivity.this, "아이디 중복확인", "사용할 수 있는 이메일입니다.", null);
+                    checkId = true;
+                    //TODO checkIdOK.setText("아이디 중복 확인 완료");
                 }
             });
         });

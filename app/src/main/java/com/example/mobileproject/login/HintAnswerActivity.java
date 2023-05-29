@@ -67,6 +67,7 @@ public class HintAnswerActivity extends AppCompatActivity {
                 @Override
                 public void onUserNotFound(String errorMessage) {
                     // 힌트 답변이 일치하지 않는 경우
+                    //TODO 안 뜸. 고치기
                     DialogUtil.showAlertDialog(HintAnswerActivity.this, "비밀번호 찾기", "힌트 답변이 일치하지 않습니다!", null);
                 }
             });
