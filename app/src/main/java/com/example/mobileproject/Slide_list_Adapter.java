@@ -26,33 +26,33 @@ public class Slide_list_Adapter extends ArrayAdapter<String> {
 
     @NonNull
     @Override
-    public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.slide_list_layout, parent, false);
+    public View getView(final int index, View view, @NonNull ViewGroup parent) {
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.slide_list_layout, parent, false);
         }
 
-        String item = itemList.get(position);
+        String item = itemList.get(index);
 
-        TextView place_list_item = convertView.findViewById(R.id.slide_list_item);
+        TextView place_list_item = view.findViewById(R.id.slide_list_item);
         place_list_item.setText(item);
 
         // 각 아이템에 클릭 이벤트 추가
-        convertView.setOnClickListener(new View.OnClickListener() {
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 아이템 클릭 시 실행될 동작 정의
-                Toast.makeText(context, "클릭한 아이템: " + itemList.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, itemList.get(index), Toast.LENGTH_SHORT).show();
             }
         });
 
-        return convertView;
+        return view;
     }
 
     public void setItemClickListeners(View.OnClickListener[] clickListeners) {
         if (clickListeners.length == itemList.size()) {
             itemClickListeners = clickListeners;
         } else {
-            throw new IllegalArgumentException("The size of clickListeners should match the size of itemList");
+            throw new IllegalArgumentException("배열의 아이템이 아닙니다.");
         }
     }
 }

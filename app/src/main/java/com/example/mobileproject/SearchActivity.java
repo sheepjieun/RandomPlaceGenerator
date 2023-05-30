@@ -72,7 +72,7 @@ public class SearchActivity extends AppCompatActivity {
             updateSearchHistoryUI();
             editText.setText("");
 
-            Intent intent = new Intent(SearchActivity.this, sjs.example.forumtest.ForumActivity.class);
+            Intent intent = new Intent(SearchActivity.this, ForumActivity.class);
             intent.putExtra("searchQuery", searchQuery);
             startActivity(intent);
         }
