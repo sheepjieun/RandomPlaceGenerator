@@ -5,14 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.FirestoreUserRepository;
 import com.example.mobileproject.Repository.UserRepository;
+import com.example.mobileproject.Repository.UserRepositoryInterface;
 import com.example.mobileproject.Repository.UserRepositoryCallback;
 import com.example.mobileproject.util.DialogUtil;
 
@@ -20,7 +18,7 @@ public class FindIdResultActivity extends AppCompatActivity {
 
     private TextView tv_content;
     private ImageButton btn_ok, btn_findPassword;
-    private final UserRepository userRepository = new FirestoreUserRepository();
+    private final UserRepositoryInterface userRepositoryInterface = new UserRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +48,7 @@ public class FindIdResultActivity extends AppCompatActivity {
 
         //비밀번호 찾기 버튼 클릭 시
         btn_findPassword.setOnClickListener(v -> {
-            userRepository.findUserByField("id", foundId, "passwordHint", new UserRepositoryCallback() {
+            userRepositoryInterface.findUserByField("id", foundId, "passwordHint", new UserRepositoryCallback() {
                 @Override
                 public void onUserFound(String foundField) {
                     Intent intent = new Intent(FindIdResultActivity.this, HintAnswerActivity.class);

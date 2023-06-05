@@ -1,19 +1,17 @@
 package com.example.mobileproject.login;
-import com.example.mobileproject.Repository.FirestoreUserRepository;
+import com.example.mobileproject.Repository.DocumentWrite;
 import com.example.mobileproject.Repository.UserRepository;
+import com.example.mobileproject.Repository.UserRepositoryInterface;
 import com.example.mobileproject.Repository.UserRepositoryCallback;
 import com.example.mobileproject.util.DialogUtil;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintSet;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -26,12 +24,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth; //파이어베이스 인증
     private FirebaseFirestore firestore; //firestore 데이터베이스
-    private final UserRepository userRepository = new FirestoreUserRepository();
+    private final UserRepositoryInterface userRepositoryInterface = new UserRepository();
 
     //회원가입 입력필드
     private EditText et_id;
@@ -71,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn_checkId.setOnClickListener(v -> {
             //et_id와 firebase 사용자 계정 중복 여부 확인
             String strId = et_id.getText().toString();
-            userRepository.findUserByField("id", strId, "id", new UserRepositoryCallback() {
+            userRepositoryInterface.findUserByField("id", strId, "id", new UserRepositoryCallback() {
                 @Override
                 public void onUserFound(String foundField) {
                     //중복된 이메일
@@ -96,10 +93,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String strId = et_id.getText().toString();
                 String strPw = et_password.getText().toString();
                 String strRetryPw = et_retryPassword.getText().toString();
-                String strPhoneNumber = et_phoneNumber.getText().toString();
-                String strNickname = et_nickname.getText().toString();
-                String strPasswordHint = et_hint.getText().toString();
-                String strPasswordHintAnswer = et_hintAnswer.getText().toString();
 
                 if (!strPw.equals(strRetryPw)) {
                     DialogUtil.showAlertDialog(RegisterActivity.this, "비밀번호 확인", "비밀번호를 다시 한 번 확인하십시오.", null);
@@ -109,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                             .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) { //task:회원가입 처리 후 결과값을 task으로 대입
-                                    //인증처리 완료 되었을 때 (회원가입 성공 시)
+                                    //createUserWithEmailAndPassword() 호출로 회원가입 요청 처리 완료 시
                                     if (task.isSuccessful()) {
                                         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser(); //현재 firebase 로그인 된 유저 객체를 가져옴
 
@@ -117,35 +110,48 @@ public class RegisterActivity extends AppCompatActivity {
                                         UserAccount account = new UserAccount();
                                         account.setIdToken(firebaseUser.getUid()); //firebase 고유의 UID 설정
                                         account.setId(firebaseUser.getEmail()); //로그인된 유저 기준으로 getEmail()
-                                        account.setPassword(strPw); //사용자가 입력한 것을 이용해서 그대로 가져옴
-                                        account.setPhoneNumber(strPhoneNumber);
-                                        account.setNickname(strNickname);
-                                        account.setPasswordHint(strPasswordHint);
-                                        account.setPasswordHintAnswer(strPasswordHintAnswer);
+                                        account.setPassword(et_password.getText().toString()); //사용자가 입력한 것을 이용해서 그대로 가져옴
+                                        account.setPhoneNumber(et_retryPassword.getText().toString());
+                                        account.setNickname(et_nickname.getText().toString());
+                                        account.setPasswordHint(et_hint.getText().toString());
+                                        account.setPasswordHintAnswer(et_hintAnswer.getText().toString());
 
                                         //Firestore에 데이터 추가
-                                        firestore.collection("UserAccount")
-                                                .document(userUID)
-                                                .set(account)
-                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<Void> task) {
-                                                        if (task.isSuccessful()) {
-                                                            DialogUtil.showAlertDialog(RegisterActivity.this, "회원가입 완료", "회원가입이 완료되었습니다.", new DialogInterface.OnClickListener() {
-                                                                @Override
-                                                                public void onClick(DialogInterface dialog, int which) {
-                                                                    dialog.dismiss(); // 대화상자 닫기
-                                                                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                                                    startActivity(intent);
-                                                                }
-                                                            });
-                                                        } else {
-                                                            Toast.makeText(RegisterActivity.this, "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT).show();
-                                                        }
+                                        DocumentWrite writer = new DocumentWrite(firestore);
+                                        writer.setDocument("user", userUID, account).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                //writer.setDocument() 호출로 firestore 데이터 추가 작업 성공 시
+                                                if (task.isSuccessful()) {
+                                                    //회원가입 성공 대화상자
+                                                    DialogUtil.showAlertDialog(RegisterActivity.this, "회원가입 완료", "회원가입이 완료되었습니다.", (dialog, which) -> {
+                                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                                        startActivity(intent);
+                                                        finish();
+                                                        dialog.dismiss();
+                                                    });
+                                                } else {
+                                                    Exception exception = task.getException();
+                                                    if (exception != null) {
+                                                        String errorMessage = exception.getMessage();
+                                                        Toast.makeText(RegisterActivity.this, "회원가입 실패: " + errorMessage, Toast.LENGTH_SHORT).show();
+                                                    } else {
+                                                        Toast.makeText(RegisterActivity.this, "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT).show();
                                                     }
-                                                });
-                                    } else {
-                                        Toast.makeText(RegisterActivity.this, "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
+
+                                    }
+                                    else {
+                                        // 회원가입 실패 처리
+                                        Exception exception = task.getException();
+                                        if (exception != null) {
+                                            String errorMessage = exception.getMessage();
+                                            Toast.makeText(RegisterActivity.this, "회원가입 실패: " + errorMessage, Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(RegisterActivity.this, "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT).show();
+                                        }
                                     }
                                 }
                             });

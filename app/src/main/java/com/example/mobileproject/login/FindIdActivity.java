@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.FirestoreUserRepository;
 import com.example.mobileproject.Repository.UserRepository;
+import com.example.mobileproject.Repository.UserRepositoryInterface;
 import com.example.mobileproject.Repository.UserRepositoryCallback;
 import com.example.mobileproject.util.DialogUtil;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,7 +21,7 @@ public class FindIdActivity extends AppCompatActivity {
     private FirebaseFirestore firestore; //firestore 데이터베이스
     private EditText et_phoneNumber;
 
-    private final UserRepository userRepository = new FirestoreUserRepository();
+    private final UserRepositoryInterface userRepositoryInterface = new UserRepository();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +42,7 @@ public class FindIdActivity extends AppCompatActivity {
             if (strPhoneNumber.isEmpty()) {
                 DialogUtil.showAlertDialog(FindIdActivity.this, "아이디 찾기", "휴대폰 번호를 입력해주세요!", null);
             } else {
-                userRepository.findUserByField("phoneNumber", strPhoneNumber, "id", new UserRepositoryCallback() {
+                userRepositoryInterface.findUserByField("phoneNumber", strPhoneNumber, "id", new UserRepositoryCallback() {
                     @Override
                     public void onUserFound(String foundField) {
                         Intent intent = new Intent(FindIdActivity.this, FindIdResultActivity.class);

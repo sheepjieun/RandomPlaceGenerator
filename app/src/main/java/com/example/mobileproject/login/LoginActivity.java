@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        databaseRef = FirebaseDatabase.getInstance().getReference("UsersAccount");
+        databaseRef = FirebaseDatabase.getInstance().getReference("user");
 
         et_id = findViewById(R.id.et_id);
         et_password = findViewById(R.id.et_password);

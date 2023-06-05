@@ -2,27 +2,24 @@ package com.example.mobileproject.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.FirestoreUserRepository;
 import com.example.mobileproject.Repository.UserRepository;
+import com.example.mobileproject.Repository.UserRepositoryInterface;
 import com.example.mobileproject.Repository.UserRepositoryCallback;
 import com.example.mobileproject.util.DialogUtil;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HintAnswerActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth; //파이어베이스 인증
     private FirebaseFirestore firestore; //firestore 데이터베이스
-    private final UserRepository userRepository = new FirestoreUserRepository();
+    private final UserRepositoryInterface userRepositoryInterface = new UserRepository();
 
     private EditText et_hintAnswer;
 
@@ -54,7 +51,7 @@ public class HintAnswerActivity extends AppCompatActivity {
         // 확인 버튼 클릭 시
         btn_ok.setOnClickListener(v -> {
             String hintAnswer = et_hintAnswer.getText().toString();
-            userRepository.findUserByField("passwordHint", foundPwHint, "passwordHintAnswer", new UserRepositoryCallback() {
+            userRepositoryInterface.findUserByField("passwordHint", foundPwHint, "passwordHintAnswer", new UserRepositoryCallback() {
                 @Override
                 public void onUserFound(String foundField) {
                     if (foundField.equals(hintAnswer)) {
