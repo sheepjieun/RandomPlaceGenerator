@@ -9,9 +9,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.UserRepository;
-import com.example.mobileproject.Repository.UserRepositoryInterface;
-import com.example.mobileproject.Repository.UserRepositoryCallback;
+import com.example.mobileproject.Repository.FindField;
+import com.example.mobileproject.Repository.FindFieldInterface;
+import com.example.mobileproject.Repository.FindFiledCallback;
 import com.example.mobileproject.util.DialogUtil;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -19,7 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class InputIdActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth; //파이어베이스 인증
     private FirebaseFirestore firestore; //firestore 데이터베이스
-    private final UserRepositoryInterface userRepositoryInterface = new UserRepository();
+    private final FindFieldInterface findFieldInterface = new FindField();
 
     private EditText et_id;
 
@@ -41,7 +41,7 @@ public class InputIdActivity extends AppCompatActivity {
             if (strId.isEmpty()) {
                 DialogUtil.showAlertDialog(InputIdActivity.this, "비밀번호 찾기", "아이디를 입력해주세요!", null);
             } else {
-                userRepositoryInterface.findUserByField("id", strId, "passwordHint", new UserRepositoryCallback() {
+                findFieldInterface.findUserByField("id", strId, "passwordHint", new FindFiledCallback() {
                     @Override
                     public void onUserFound(String foundField) {
                         Intent intent = new Intent(InputIdActivity.this, HintAnswerActivity.class);

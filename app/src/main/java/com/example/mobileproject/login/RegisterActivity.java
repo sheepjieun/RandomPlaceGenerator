@@ -1,17 +1,15 @@
 package com.example.mobileproject.login;
 import com.example.mobileproject.Repository.DocumentWrite;
-import com.example.mobileproject.Repository.UserRepository;
-import com.example.mobileproject.Repository.UserRepositoryInterface;
-import com.example.mobileproject.Repository.UserRepositoryCallback;
+import com.example.mobileproject.Repository.FindField;
+import com.example.mobileproject.Repository.FindFieldInterface;
+import com.example.mobileproject.Repository.FindFiledCallback;
 import com.example.mobileproject.util.DialogUtil;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -28,7 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth; //파이어베이스 인증
     private FirebaseFirestore firestore; //firestore 데이터베이스
-    private final UserRepositoryInterface userRepositoryInterface = new UserRepository();
+    private final FindFieldInterface findFieldInterface = new FindField();
 
     //회원가입 입력필드
     private EditText et_id;
@@ -68,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn_checkId.setOnClickListener(v -> {
             //et_id와 firebase 사용자 계정 중복 여부 확인
             String strId = et_id.getText().toString();
-            userRepositoryInterface.findUserByField("id", strId, "id", new UserRepositoryCallback() {
+            findFieldInterface.findUserByField("id", strId, "id", new FindFiledCallback() {
                 @Override
                 public void onUserFound(String foundField) {
                     //중복된 이메일

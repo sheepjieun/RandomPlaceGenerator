@@ -7,14 +7,14 @@ import com.google.firebase.firestore.QuerySnapshot;
 //Firestore에 대한 실제 데이터 액세스 코드를 구현
 //db필드와 유저 입력값을 비교 후 일치하는 필드값을 추출
 
-public class UserRepository implements UserRepositoryInterface {
+public class FindField implements FindFieldInterface {
     private FirebaseFirestore firestore;
 
-    public UserRepository() {
+    public FindField() {
         firestore = FirebaseFirestore.getInstance();
     }
     @Override
-    public void findUserByField(String field, String value, String getField, UserRepositoryCallback callback) {
+    public void findUserByField(String field, String value, String getField, FindFiledCallback callback) {
         firestore.collection("user")
                 .whereEqualTo(field, value) //비교할 필드키, 입력값 비교
                 .get()

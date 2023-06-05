@@ -9,16 +9,16 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.UserRepository;
-import com.example.mobileproject.Repository.UserRepositoryInterface;
-import com.example.mobileproject.Repository.UserRepositoryCallback;
+import com.example.mobileproject.Repository.FindField;
+import com.example.mobileproject.Repository.FindFieldInterface;
+import com.example.mobileproject.Repository.FindFiledCallback;
 import com.example.mobileproject.util.DialogUtil;
 
 public class FindIdResultActivity extends AppCompatActivity {
 
     private TextView tv_content;
     private ImageButton btn_ok, btn_findPassword;
-    private final UserRepositoryInterface userRepositoryInterface = new UserRepository();
+    private final FindFieldInterface findFieldInterface = new FindField();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class FindIdResultActivity extends AppCompatActivity {
 
         //비밀번호 찾기 버튼 클릭 시
         btn_findPassword.setOnClickListener(v -> {
-            userRepositoryInterface.findUserByField("id", foundId, "passwordHint", new UserRepositoryCallback() {
+            findFieldInterface.findUserByField("id", foundId, "passwordHint", new FindFiledCallback() {
                 @Override
                 public void onUserFound(String foundField) {
                     Intent intent = new Intent(FindIdResultActivity.this, HintAnswerActivity.class);

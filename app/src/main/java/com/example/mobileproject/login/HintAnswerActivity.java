@@ -9,9 +9,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.UserRepository;
-import com.example.mobileproject.Repository.UserRepositoryInterface;
-import com.example.mobileproject.Repository.UserRepositoryCallback;
+import com.example.mobileproject.Repository.FindField;
+import com.example.mobileproject.Repository.FindFieldInterface;
+import com.example.mobileproject.Repository.FindFiledCallback;
 import com.example.mobileproject.util.DialogUtil;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -19,7 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class HintAnswerActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth; //파이어베이스 인증
     private FirebaseFirestore firestore; //firestore 데이터베이스
-    private final UserRepositoryInterface userRepositoryInterface = new UserRepository();
+    private final FindFieldInterface findFieldInterface = new FindField();
 
     private EditText et_hintAnswer;
 
@@ -51,7 +51,7 @@ public class HintAnswerActivity extends AppCompatActivity {
         // 확인 버튼 클릭 시
         btn_ok.setOnClickListener(v -> {
             String hintAnswer = et_hintAnswer.getText().toString();
-            userRepositoryInterface.findUserByField("passwordHint", foundPwHint, "passwordHintAnswer", new UserRepositoryCallback() {
+            findFieldInterface.findUserByField("passwordHint", foundPwHint, "passwordHintAnswer", new FindFiledCallback() {
                 @Override
                 public void onUserFound(String foundField) {
                     if (foundField.equals(hintAnswer)) {
