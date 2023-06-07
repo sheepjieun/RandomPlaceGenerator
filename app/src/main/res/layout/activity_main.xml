@@ -4,348 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
+    <!-- 각각의 Fragment가 표시될 공간 -->
+    <!-- 각 탭 선택에 따라 어떤 Fragment를 표시할 것인지를 정의한 네비게이션 그래프를 지정 -->
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Home"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- 하단 탭 구현 -->
 
-    <ImageButton
-        android:id="@+id/alarm"
-        android:layout_width="24dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="18dp"
-        android:background="@color/white"
-        android:scaleType="fitCenter"
-        android:src="@drawable/alarm"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="5dp"
-        app:iconifiedByDefault="false"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:queryHint="장소 검색" />
-
-
-    <Button
-        android:id="@+id/select_region"
-        android:layout_width="90dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/white"
-        android:gravity="left"
-        android:text="지역선택"
-        android:textColor="@color/black"
-        android:textSize="12dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_view" />
-
-    <ImageView
-        android:layout_width="12dp"
-        android:layout_height="12dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="5dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/triangle"
-        android:translationZ="10dp"
-        app:layout_constraintRight_toRightOf="@+id/select_region"
-        app:layout_constraintTop_toTopOf="@+id/select_region" />
-
-
-    <ImageView
-        android:id="@+id/map"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginTop="10dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/map"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select_region" />
-
-    <TextView
-        android:id="@+id/best_course"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="이번 달 인기 코스"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map" />
-
-    <Button
-        android:layout_width="60dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="15dp"
-        android:backgroundTint="@color/white"
-        android:text="더보기"
-        android:textColor="@color/black"
-        android:textSize="7dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map"/>
-
-    <HorizontalScrollView
-        android:id="@+id/best_course_view"
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/best_course">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/course1_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/course1_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="경빈이네 코스" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/course2_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/course2_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="지은이네 코스" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/course3_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/course3_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="지성이네 코스" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/course4_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/course4_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="장호네 코스" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/course5_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/course5_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="명전 코스" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-
-    <TextView
-        android:id="@+id/best_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:text="이번 달 인기 장소"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/best_course_view" />
-
-    <Button
-        android:layout_width="60dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="15dp"
-        android:backgroundTint="@color/white"
-        android:text="더보기"
-        android:textColor="@color/black"
-        android:textSize="7dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/best_course_view"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/nav_graph" />
 
-    <HorizontalScrollView
-        android:id="@+id/best_place_view"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/best_place">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/place1_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/place1_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="남산 타워" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/place2_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/place2_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="석촌호수" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/place3_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/place3_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="경복궁" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/place4_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/place4_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="청년다방" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="15dp">
-                <ImageButton
-                    android:id="@+id/place5_img"
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"/>
-                <TextView
-                    android:id="@+id/place5_text"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:background="#CAC7C7"
-                    android:gravity="center"
-                    android:text="아차산" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-    <include
-        android:id="@+id/footer"
-        layout="@layout/footer"
-        android:layout_width="match_parent"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+        <!-- BottomNavigationView의 메뉴를 지정하는 속성 -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
