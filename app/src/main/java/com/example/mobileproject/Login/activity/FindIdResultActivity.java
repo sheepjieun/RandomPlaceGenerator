@@ -1,6 +1,5 @@
 package com.example.mobileproject.Login.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,12 +8,13 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.FindField;
-import com.example.mobileproject.Repository.FindFieldInterface;
-import com.example.mobileproject.Repository.FindFiledCallback;
-import com.example.mobileproject.util.DialogUtil;
+import com.example.mobileproject.Login.repository.FindField;
+import com.example.mobileproject.Login.repository.FindFieldInterface;
+import com.example.mobileproject.Login.repository.FindFiledCallback;
+import com.example.mobileproject.Login.util.DialogUtil;
+import com.example.mobileproject.baseactivity.BaseActivity;
 
-public class FindIdResultActivity extends AppCompatActivity {
+public class FindIdResultActivity extends BaseActivity {
 
     private TextView tv_content;
     private ImageButton btn_ok, btn_findPassword;
@@ -39,12 +39,6 @@ public class FindIdResultActivity extends AppCompatActivity {
         } else {
             tv_content.setText("아이디를 찾을 수 없습니다.");
         }
-
-        //뒤로가기 버튼 클릭 시 - 로그인 화면으로 이동
-        btn_ok.setOnClickListener(v -> {
-            Intent BackIntent = new Intent(FindIdResultActivity.this, LoginActivity.class);
-            startActivity(BackIntent);
-        });
 
         //비밀번호 찾기 버튼 클릭 시
         btn_findPassword.setOnClickListener(v -> {

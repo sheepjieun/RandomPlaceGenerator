@@ -1,8 +1,5 @@
 package com.example.mobileproject.Login.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,14 +9,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.DocumentWrite;
-import com.example.mobileproject.Repository.DocumentWriteInterface;
-import com.example.mobileproject.util.DialogUtil;
+import com.example.mobileproject.Login.repository.DocumentWrite;
+import com.example.mobileproject.Login.repository.DocumentWriteInterface;
+import com.example.mobileproject.Login.util.DialogUtil;
+import com.example.mobileproject.baseactivity.BaseActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class ResetPasswordActivity extends AppCompatActivity {
+public class ResetPasswordActivity extends BaseActivity {
     private FirebaseAuth firebaseAuth; //파이어베이스 인증
     private FirebaseFirestore firestore; //firestore 데이터베이스
     private DocumentWriteInterface documentWriter;
@@ -76,8 +74,8 @@ public class ResetPasswordActivity extends AppCompatActivity {
                         });
             }
         });
-
+/*
         // 뒤로가기 버튼 클릭 시
-        btn_back.setOnClickListener(v -> onBackPressed());
+        btn_back.setOnClickListener(v -> onBackPressed());*/
     }
 }

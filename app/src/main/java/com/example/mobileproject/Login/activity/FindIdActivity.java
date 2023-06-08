@@ -1,6 +1,5 @@
 package com.example.mobileproject.Login.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,14 +8,15 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.FindField;
-import com.example.mobileproject.Repository.FindFieldInterface;
-import com.example.mobileproject.Repository.FindFiledCallback;
-import com.example.mobileproject.util.DialogUtil;
+import com.example.mobileproject.Login.repository.FindField;
+import com.example.mobileproject.Login.repository.FindFieldInterface;
+import com.example.mobileproject.Login.repository.FindFiledCallback;
+import com.example.mobileproject.Login.util.DialogUtil;
+import com.example.mobileproject.baseactivity.BaseActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class FindIdActivity extends AppCompatActivity {
+public class FindIdActivity extends BaseActivity {
     private FirebaseAuth firebaseAuth; //파이어베이스 인증
     private FirebaseFirestore firestore; //firestore 데이터베이스
     private EditText et_phoneNumber;
@@ -27,6 +27,8 @@ public class FindIdActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_id);
+
+        setupActionBar("아이디 찾기", true); //액션바 타이틀 설정
 
         et_phoneNumber = findViewById(R.id.et_phoneNumber);
         ImageButton btn_findId = findViewById(R.id.btn_findId);
@@ -56,11 +58,6 @@ public class FindIdActivity extends AppCompatActivity {
                     }
                 });
             }
-        });
-        //뒤로가기 버튼 클릭 시 - 로그인 화면으로 이동
-        btn_back.setOnClickListener(v -> {
-            Intent BackIntent = new Intent(FindIdActivity.this, LoginActivity.class);
-            startActivity(BackIntent);
         });
     }
 }

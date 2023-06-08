@@ -1,6 +1,5 @@
 package com.example.mobileproject.Login.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,14 +8,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Repository.FindField;
-import com.example.mobileproject.Repository.FindFieldInterface;
-import com.example.mobileproject.Repository.FindFiledCallback;
-import com.example.mobileproject.util.DialogUtil;
+import com.example.mobileproject.Login.repository.FindField;
+import com.example.mobileproject.Login.repository.FindFieldInterface;
+import com.example.mobileproject.Login.repository.FindFiledCallback;
+import com.example.mobileproject.Login.util.DialogUtil;
+import com.example.mobileproject.baseactivity.BaseActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class HintAnswerActivity extends AppCompatActivity {
+public class HintAnswerActivity extends BaseActivity {
     private FirebaseAuth firebaseAuth; //파이어베이스 인증
     private FirebaseFirestore firestore; //firestore 데이터베이스
     private final FindFieldInterface findFieldInterface = new FindField();
@@ -44,9 +44,9 @@ public class HintAnswerActivity extends AppCompatActivity {
 
         tv_id.setText(foundId);
         tv_hint.setText(foundPwHint);
-
+/*
         // 뒤로가기 버튼 클릭 시 - 이전 화면인 InputIdActivity로 돌아감
-        btn_back.setOnClickListener(v -> onBackPressed());
+        btn_back.setOnClickListener(v -> onBackPressed());*/
 
         // 확인 버튼 클릭 시
         btn_ok.setOnClickListener(v -> {
