@@ -1,14 +1,14 @@
-package com.example.mobileproject.activity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.mobileproject.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.example.mobileproject.Home.activity.MainActivity;
 import com.example.mobileproject.R;
+import com.example.mobileproject.baseactivity.BaseActivity;
 
-public class TestLoginActivity extends AppCompatActivity {
+public class TestLoginActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

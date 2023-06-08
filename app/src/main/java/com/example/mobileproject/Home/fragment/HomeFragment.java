@@ -1,4 +1,4 @@
-package com.example.mobileproject.fragment;
+package com.example.mobileproject.Home.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,18 +9,18 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.activity.BestActivity;
-import com.example.mobileproject.adapter.BestAdapter;
+import com.example.mobileproject.Home.activity.BestActivity;
+import com.example.mobileproject.Home.adapter.BestAdapter;
+import com.example.mobileproject.basefragment.HomeBaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends HomeBaseFragment {
 
     public HomeFragment() {
         // Required empty public constructor

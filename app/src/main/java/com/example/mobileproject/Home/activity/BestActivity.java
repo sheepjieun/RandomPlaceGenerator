@@ -1,4 +1,4 @@
-package com.example.mobileproject.activity;
+package com.example.mobileproject.Home.activity;
 
 import android.os.Bundle;
 
@@ -7,17 +7,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.adapter.BestAdapter;
+import com.example.mobileproject.Home.adapter.BestAdapter;
+import com.example.mobileproject.baseactivity.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BestActivity extends AppCompatActivity {
+public class BestActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recyclerview_best);
+        setContentView(R.layout.activity_best);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview_best);
         recyclerView.setHasFixedSize(true); // if your recyclerview's size is fixed, set this to true for performance improvement

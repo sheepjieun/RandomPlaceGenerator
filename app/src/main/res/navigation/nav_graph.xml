@@ -8,28 +8,28 @@
     <!-- 홈 -->
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.mobileproject.fragment.HomeFragment"
+        android:name="com.example.mobileproject.Home.fragment.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <!-- 추천 -->
     <fragment
         android:id="@+id/navigation_recommend"
-        android:name="com.example.mobileproject.fragment.TestBookmarkFragment"
+        android:name="com.example.mobileproject.Recommend.fragment.RecommendFragment"
         android:label="@string/title_recommend"
-        tools:layout="@layout/fragment_test_recommend" />
+        tools:layout="@layout/fragment_recommend" />
 
     <!-- 북마크 -->
     <fragment
         android:id="@+id/navigation_bookmark"
-        android:name="com.example.mobileproject.fragment.TestBookmarkFragment"
+        android:name="com.example.mobileproject.Bookmark.fragment.BookmarkFragment"
         android:label="@string/title_bookmark"
-        tools:layout="@layout/fragment_test_bookmark" />
+        tools:layout="@layout/fragment_bookmark" />
 
     <!-- 공유 -->
     <fragment
         android:id="@+id/navigation_share"
-        android:name="com.example.mobileproject.fragment.TestShareFragment"
+        android:name="com.example.mobileproject.Share.fragment.ShareFragment"
         android:label="@string/title_share"
-        tools:layout="@layout/fragment_test_share" />
+        tools:layout="@layout/fragment_share" />
 </navigation>

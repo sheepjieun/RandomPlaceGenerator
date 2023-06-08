@@ -1,16 +1,15 @@
-package com.example.mobileproject.fragment;
+package com.example.mobileproject.Recommend.fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.mobileproject.R;
 
-public class TestRecommendFragment extends Fragment {
+public class RecommendFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,7 +20,7 @@ public class TestRecommendFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public TestRecommendFragment() {
+    public RecommendFragment() {
         // Required empty public constructor
     }
 
@@ -31,11 +30,11 @@ public class TestRecommendFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TestRecommendFragment.
+     * @return A new instance of fragment RecommendFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TestRecommendFragment newInstance(String param1, String param2) {
-        TestRecommendFragment fragment = new TestRecommendFragment();
+    public static RecommendFragment newInstance(String param1, String param2) {
+        RecommendFragment fragment = new RecommendFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -56,6 +55,6 @@ public class TestRecommendFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_test_recommend, container, false);
+        return inflater.inflate(R.layout.fragment_recommend, container, false);
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".Home.activity.MainActivity">
 
     <!-- 각각의 Fragment가 표시될 공간 -->
     <!-- 각 탭 선택에 따라 어떤 Fragment를 표시할 것인지를 정의한 네비게이션 그래프를 지정 -->

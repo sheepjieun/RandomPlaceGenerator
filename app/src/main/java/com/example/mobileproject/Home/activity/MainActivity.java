@@ -1,4 +1,4 @@
-package com.example.mobileproject.activity;
+package com.example.mobileproject.Home.activity;
 
 import android.os.Bundle;
 
@@ -8,9 +8,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.mobileproject.R;
+import com.example.mobileproject.baseactivity.BaseActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,4 +1,4 @@
-package com.example.mobileproject.adapter;
+package com.example.mobileproject.Home.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,9 +39,9 @@ public class BestAdapter extends RecyclerView.Adapter<BestAdapter.ViewHolder> {
     public BestAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
         if (viewType == 0) {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_item, parent, false);
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemview_best_home, parent, false);
         } else {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.best_item, parent, false);
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemview_best_detail, parent, false);
         }
         return new ViewHolder(v);
     }
