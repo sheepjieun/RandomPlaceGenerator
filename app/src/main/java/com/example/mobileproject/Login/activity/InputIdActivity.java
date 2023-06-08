@@ -28,7 +28,6 @@ public class InputIdActivity extends BaseActivity {
         setContentView(R.layout.activity_input_id);
 
         et_id = findViewById(R.id.et_id);
-        ImageButton btn_back = findViewById(R.id.btn_back);
         ImageButton btn_ok = findViewById(R.id.btn_ok);
 
         firebaseAuth = FirebaseAuth.getInstance();

@@ -32,7 +32,6 @@ public class FindIdActivity extends BaseActivity {
 
         et_phoneNumber = findViewById(R.id.et_phoneNumber);
         ImageButton btn_findId = findViewById(R.id.btn_findId);
-        ImageButton btn_back = findViewById(R.id.btn_back);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();

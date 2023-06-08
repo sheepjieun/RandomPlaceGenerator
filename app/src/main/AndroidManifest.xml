@@ -16,22 +16,66 @@
         android:theme="@style/Theme.MobileProject"
         tools:targetApi="31">
 
+        <!-- 로그인 -->
         <activity
-            android:name=".activity.TestLoginActivity"
-            android:exported="true"
-            android:label="@string/title_activity_test_login"
-            android:theme="@style/Theme.MobileProject.NoActionBar">
+            android:name=".Login.activity.IntroActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.BestActivity"
+            android:name=".Login.activity.ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".Login.activity.HintAnswerActivity"
             android:exported="false" />
+        <activity
+            android:name=".Login.activity.InputIdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Login.activity.FindIdResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Login.activity.FindIdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Login.activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Login.activity.LoginActivity"
+            android:exported="true"/>
+
+        <!-- 홈 -->
+        <activity
+            android:name=".Home.activity.AlarmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.activity.BestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.activity.HomeSearchActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Home.activity.MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Home.activity.MapActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Home.activity.MyPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Home.activity.ShareSearchActivity"
+            android:exported="false" />
+
+
+
     </application>
 
 </manifest>

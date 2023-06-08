@@ -33,7 +33,6 @@ public class ResetPasswordActivity extends BaseActivity {
         tv_id = findViewById(R.id.tv_id);
         et_newPassword = findViewById(R.id.et_newPassword);
         et_newPasswordCheck = findViewById(R.id.et_newPasswordCheck);
-        ImageButton btn_back = findViewById(R.id.btn_back);
         ImageButton btn_ok = findViewById(R.id.btn_ok);
 
         firebaseAuth = FirebaseAuth.getInstance();

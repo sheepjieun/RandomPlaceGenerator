@@ -29,7 +29,6 @@ public class HintAnswerActivity extends BaseActivity {
         setContentView(R.layout.activity_hint_answer);
 
         et_hintAnswer = findViewById(R.id.et_hintAnswer);
-        ImageButton btn_back = findViewById(R.id.btn_back);
         ImageButton btn_ok = findViewById(R.id.btn_ok);
         TextView tv_id = findViewById(R.id.tv_id);
         TextView tv_hint = findViewById(R.id.tv_hint);

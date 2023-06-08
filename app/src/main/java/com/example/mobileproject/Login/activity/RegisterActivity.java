@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.mobileproject.R;
 import com.example.mobileproject.baseactivity.BaseActivity;
+import com.example.mobileproject.data.UserAccount;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -51,8 +52,7 @@ public class RegisterActivity extends BaseActivity {
         et_hint = findViewById(R.id.et_hint);
         et_hintAnswer = findViewById(R.id.et_hintAnswer);
 
-        //뒤로가기, 아이디중복확인, 회원가입 버튼
-        ImageButton btn_back = findViewById(R.id.btn_back);
+        //아이디중복확인, 회원가입 버튼
         Button btn_checkId = findViewById(R.id.btn_checkId);
         ImageButton btn_registerOK = findViewById(R.id.btn_registerOK);
 
