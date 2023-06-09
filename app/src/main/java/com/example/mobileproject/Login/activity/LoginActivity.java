@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.mobileproject.Home.activity.MainActivity;
+import com.example.mobileproject.Home.fragment.HomeFragment;
 import com.example.mobileproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -59,9 +61,9 @@ public class LoginActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) { //로그인 성공 시
                                     Log.d("LoginActivity", "로그인 성공");
                                     Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                                    //Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                    //startActivity(intent);
-                                    //finish(); //로그인 완료 시 현재 액티비티 파괴
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish(); //로그인 완료 시 현재 액티비티 파괴
                                 } else { //로그인 실패 시
                                     DialogUtil.showAlertDialog(LoginActivity.this, "로그인 실패", "아이디 혹은 비밀번호를 확인하여 다시 입력해주세요!", null);
                                     Log.d("LoginActivity", "로그인 실패: " + task.getException().getMessage());
