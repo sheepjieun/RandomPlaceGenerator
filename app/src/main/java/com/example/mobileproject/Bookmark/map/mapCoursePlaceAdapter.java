@@ -25,7 +25,7 @@ public class mapCoursePlaceAdapter extends RecyclerView.Adapter<mapCoursePlaceAd
     @NonNull
     @Override
     public CustomHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemview_map_course_place, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_map_course_place, parent, false);
         CustomHolder holder = new CustomHolder(view);
         return holder;
     }

@@ -1,14 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Share.fragment.ShareFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="공유" />
+        android:id="@+id/forum_frame"/>
 
-</FrameLayout>
+    <!-- 버튼 레이아웃과 거리두기 위한 25dp line !-->
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:background="@color/black"
+      android:id="@+id/line1"
+      app:layout_constraintTop_toTopOf="parent"/>
+
+  <!-- 버튼 레이아웃 !-->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="20dp"
+      android:orientation="horizontal"
+      android:id="@+id/btn_line1"
+      app:layout_constraintTop_toBottomOf="@+id/line1">
+
+  </LinearLayout>
+
+  <!-- 목록 레이아웃과 거리두기 위한 25dp line !-->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:background="@color/black"
+      android:id="@+id/line2"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@+id/btn_line1"/>
+  <!-- 목록 버튼 !-->
+
+
+ <FrameLayout
+     android:layout_width="100dp"
+     android:layout_height="300dp"
+     android:layout_marginLeft="10dp"
+     android:id="@+id/place_frame"
+     app:layout_constraintTop_toBottomOf="@+id/place"
+     app:layout_constraintLeft_toLeftOf="parent"
+     >
+
+   <ListView
+       android:id="@+id/place_list"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="0dp"
+       android:layout_marginBottom="8dp"
+       android:visibility="gone" />
+
+ </FrameLayout>
+
+    <Button
+        android:id="@+id/place"
+        android:layout_width="102dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="8dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableRight="@drawable/ic_slidedown"
+        android:text="서울시"
+
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_line"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_line2"
+        app:layout_constraintTop_toBottomOf="@+id/place"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+          android:id="@+id/slide_down"
+          android:layout_width="102dp"
+          android:layout_height="45dp"
+          android:layout_marginLeft="10dp"
+          android:backgroundTint="#FFFFFF"
+          android:drawableRight="@drawable/ic_slidedown"
+          android:text="최신순"
+          android:textColor="@color/black"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+
+  <FrameLayout
+      android:layout_width="110dp"
+      android:layout_height="200dp"
+      android:layout_marginLeft="10dp"
+      android:id="@+id/list_frame"
+      app:layout_constraintTop_toBottomOf="@+id/slide_down"
+      app:layout_constraintRight_toRightOf="parent">
+
+
+    <ListView
+        android:id="@+id/slide_down_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+  </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_line">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/text_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

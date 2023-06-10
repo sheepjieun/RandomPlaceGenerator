@@ -39,9 +39,9 @@ public class BestAdapter extends RecyclerView.Adapter<BestAdapter.ViewHolder> {
     public BestAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
         if (viewType == 0) {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemview_best_home, parent, false);
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_best_home, parent, false);
         } else {
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemview_best_detail, parent, false);
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_best_detail, parent, false);
         }
         return new ViewHolder(v);
     }

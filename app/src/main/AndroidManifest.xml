@@ -59,6 +59,8 @@
         <activity android:name=".Bookmark.map.mapRecommendActivity"/>
 
         <!-- 공유 -->
+        <activity android:name=".Share.activity.ShareSearchActivity" />
+        <activity android:name=".Share.activity.DetailPlaceActivity" />
 
         <!-- 카카오맵 네이티브 앱 키 -->
         <meta-data

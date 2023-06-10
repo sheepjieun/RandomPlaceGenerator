@@ -15,6 +15,8 @@
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_best_place_monthly.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_bestcourse.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_bestplace.xml" value="0.1984375" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_detail_place.xml" value="0.1984375" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_detailplacesub1.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_find_id.xml" value="0.19427083333333334" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_find_id_result.xml" value="0.19427083333333334" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_hint_answer.xml" value="0.19427083333333334" />
@@ -37,6 +39,7 @@
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_register.xml" value="0.19427083333333334" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_reset_password.xml" value="0.19427083333333334" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_search_home.xml" value="0.1984375" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_search_none.xml" value="0.11145833333333334" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_search_share.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_share_search.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/activity_test_login.xml" value="0.19538461538461538" />
@@ -77,9 +80,14 @@
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/fragment_ulsan.xml" value="0.1203125" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/home_card_item.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/home_item.xml" value="0.22" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/item_best_detail.xml" value="0.1984375" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/item_course.xml" value="0.11145833333333334" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/item_place.xml" value="0.1984375" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/item_slide.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/itemview_alram.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/itemview_best_detail.xml" value="0.1203125" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/itemview_best_home.xml" value="0.1984375" />
+        <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/itemview_map_course_place.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/recyclerview_best.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/layout/recyclerview_best_place_monthly.xml" value="0.1984375" />
         <entry key="..\:/mobileapp/MobileProject/app/src/main/res/menu/actionbar_actions.xml" value="0.1984375" />
