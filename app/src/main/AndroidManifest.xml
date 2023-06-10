@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -26,55 +27,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Login.activity.ResetPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Login.activity.HintAnswerActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Login.activity.InputIdActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Login.activity.FindIdResultActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Login.activity.FindIdActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Login.activity.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Login.activity.LoginActivity"
-            android:exported="true"/>
+        <activity android:name=".Login.activity.ResetPasswordActivity"/>
+        <activity android:name=".Login.activity.HintAnswerActivity"/>
+        <activity android:name=".Login.activity.InputIdActivity" />
+        <activity android:name=".Login.activity.FindIdResultActivity"/>
+        <activity android:name=".Login.activity.FindIdActivity" />
+        <activity android:name=".Login.activity.RegisterActivity"/>
+        <activity android:name=".Login.activity.LoginActivity"/>
 
         <!-- 홈 -->
-        <activity
-            android:name=".Home.activity.AlarmActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Home.activity.BestActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Home.activity.HomeSearchActivity"
-            android:exported="false" />
+        <activity android:name=".Home.activity.AlarmActivity"/>
+        <activity android:name=".Home.activity.BestActivity"/>
+        <activity android:name=".Home.activity.HomeSearchActivity" />
+        <activity android:name=".Home.activity.MainActivity"/>
+        <activity android:name=".Home.activity.MapActivity"/>
+        <activity android:name=".Home.activity.MyPageActivity" />
+        <activity android:name=".Home.activity.ShareSearchActivity" />
 
-        <activity
-            android:name=".Home.activity.MainActivity"
-            android:exported="false" />
+        <!-- 추천 -->
+        <activity android:name=".Recommend.activitiy.RecommendActivity1" />
+        <activity android:name=".Recommend.activitiy.RecommendActivity2" />
+        <activity android:name=".Recommend.activitiy.RecommendActivity3" />
 
-        <activity
-            android:name=".Home.activity.MapActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Home.activity.MyPageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Home.activity.ShareSearchActivity"
-            android:exported="false" />
-
-
+        <!-- 카카오맵 네이티브 앱 키 -->
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="7444deacb77e90c88a2e57a7e7f55b09" />
 
     </application>
 

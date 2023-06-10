@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recommend.fragment.JeonnamFragment">
+
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <Button
+            android:id="@+id/seoul1"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="전남 전체"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/gangjin"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="강진군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/gohung"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="고흥군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/gokseong"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="곡성군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/gwangyang"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="광양시"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/gurye"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="구례군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/naju"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="나주시"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/damyang"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="담양군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/mokpo"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="목포시"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/muan"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="무안군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/boseong"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="보성군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/suncheon"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="순천시"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@+id/layout1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/sinan"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="신안군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/yeosu"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="여수시"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/yeonggwang"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="영광군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/yeongam"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="영암군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/wando"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="완도군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/jangseong"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="장성군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/jangheung"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="장흥군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/jindo"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="진도군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/hamyang"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="함양군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/haenam"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="해남군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/hwasun"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="화순군"
+            android:textSize="13dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
