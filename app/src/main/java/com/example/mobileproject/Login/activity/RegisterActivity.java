@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.example.mobileproject.R;
 import com.example.mobileproject.baseactivity.BaseActivity;
-import com.example.mobileproject.data.UserAccount;
+import com.example.mobileproject.Login.data.UserAccount;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

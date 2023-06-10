@@ -1,4 +1,4 @@
-package com.example.mobileproject.data;
+package com.example.mobileproject.Login.data;
 
 //사용자 계정 정보
 public class UserAccount {

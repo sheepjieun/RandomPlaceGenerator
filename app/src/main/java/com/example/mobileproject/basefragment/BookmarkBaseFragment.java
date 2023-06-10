@@ -11,6 +11,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.mobileproject.Bookmark.map.mapActivity;
 import com.example.mobileproject.Home.activity.MapActivity;
 import com.example.mobileproject.R;
 
@@ -36,8 +37,8 @@ public class BookmarkBaseFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_map:
-                // 알람 동작 처리
-                Intent mapIntent = new Intent(getActivity(), MapActivity.class);
+                // 맵 동작 처리
+                Intent mapIntent = new Intent(getActivity(), mapActivity.class);
                 startActivity(mapIntent);
                 return true;
             default:

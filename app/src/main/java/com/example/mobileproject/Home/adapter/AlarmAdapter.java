@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.data.Alarm;
+import com.example.mobileproject.Home.data.Alarm;
 
 import java.util.List;
 

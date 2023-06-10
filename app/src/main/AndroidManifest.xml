@@ -49,6 +49,17 @@
         <activity android:name=".Recommend.activitiy.RecommendActivity2" />
         <activity android:name=".Recommend.activitiy.RecommendActivity3" />
 
+        <!-- 북마크 -->
+        <activity android:name=".Bookmark.map.mapCoursePlaceActivity"/>
+        <activity android:name=".Bookmark.map.mapRecommendMadedActivity"/>
+        <activity android:name=".Bookmark.map.mapActivity"/>
+        <activity android:name=".Bookmark.map.mapSelfActivity"/>
+        <activity android:name=".Bookmark.map.mapCourseCategoryActivity"/>
+        <activity android:name=".Bookmark.map.mapNavigationActivity"/>
+        <activity android:name=".Bookmark.map.mapRecommendActivity"/>
+
+        <!-- 공유 -->
+
         <!-- 카카오맵 네이티브 앱 키 -->
         <meta-data
             android:name="com.kakao.sdk.AppKey"

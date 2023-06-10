@@ -1,4 +1,4 @@
-package com.example.mobileproject.data;
+package com.example.mobileproject.Home.data;
 //Firebase Firestore로부터 가져온 데이터를 애플리케이션 내부에서 사용할 수 있는 형태로 바꿈
 
 public class BestCourse {

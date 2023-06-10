@@ -1,4 +1,4 @@
-package com.example.mobileproject.data;
+package com.example.mobileproject.Home.data;
 
 public class Alarm {
     private String title;
