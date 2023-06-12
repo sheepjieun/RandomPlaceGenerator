@@ -34,7 +34,6 @@ public class BestAdapter extends RecyclerView.Adapter<BestAdapter.ViewHolder> {
         return viewType;
     }
 
-    // Create new views (invoked by the layout manager)
     @Override
     public BestAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
@@ -46,13 +45,10 @@ public class BestAdapter extends RecyclerView.Adapter<BestAdapter.ViewHolder> {
         return new ViewHolder(v);
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         String currentPlace = mData.get(position);
         holder.tv_name.setText(currentPlace);
-        // get element from your dataset at this position
-        // replace the contents of the view with that element
 
         //TODO Glide 라이브러리 사용하여 이미지 구현
    /*     Glide.with(holder.itemView)
@@ -60,17 +56,12 @@ public class BestAdapter extends RecyclerView.Adapter<BestAdapter.ViewHolder> {
                 .into(holder.iv_image);*/
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return mData.size();
     }
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
         public TextView tv_name;
         public ImageView iv_image;
 

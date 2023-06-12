@@ -8,29 +8,30 @@
     <!-- 지도 -->
 
 
-
     <RelativeLayout
         android:id="@+id/map_view"
-        android:layout_width="363dp"
+        android:layout_width="match_parent"
         android:layout_height="590dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginLeft="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
     </RelativeLayout>
 
-
     <ImageButton
         android:id="@+id/btnStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="40dp"
         android:background="@color/white"
+        android:scaleType="fitCenter"
         android:src="@drawable/btn_navigation_start"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map_view"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

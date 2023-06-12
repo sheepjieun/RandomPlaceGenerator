@@ -2,6 +2,8 @@ package com.example.mobileproject.Home.data;
 //Firebase Firestore로부터 가져온 데이터를 애플리케이션 내부에서 사용할 수 있는 형태로 바꿈
 
 public class BestPlace {
+    //인기 장소 데이터
+
     //TODO 필드 목록 수정
     private String name;
     private String url;

@@ -1,165 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/select_category_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:text="카테고리 설정"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/select_category_img"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/select_category_img"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="5dp"
+    <ImageButton
+        android:id="@+id/btn_restaurant"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/white"
         android:scaleType="fitCenter"
-        android:src="@drawable/category"
-        android:translationZ="10dp"
+        android:src="@drawable/btn_place_restaurant"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/selected_region_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="15dp"
-        android:text="서울 전체"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/btn_cafe"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_place_cafe"
+        app:layout_constraintStart_toEndOf="@+id/btn_restaurant"
+        app:layout_constraintTop_toTopOf="@+id/btn_restaurant" />
 
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="2dp"
-        app:layout_constraintTop_toBottomOf="@+id/select_category_text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="10dp"
-        android:background="#D0B4B4"/>
-
-        <ImageButton
-            android:id="@+id/btn_restaurant"
-            android:layout_width="119dp"
-            android:layout_height="44dp"
-            android:background="@color/white"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_restaurant"
-            android:layout_marginTop="20dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/btn_cafe"
-            app:layout_constraintTop_toTopOf="@+id/line"/>
-        <ImageButton
-            android:id="@+id/btn_cafe"
-            android:layout_width="119dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_cafe"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/btn_restaurant"
-            app:layout_constraintTop_toTopOf="@+id/line"/>
-        <ImageButton
-            android:id="@+id/btn_walk"
-            android:layout_width="119dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_walk"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/btn_cafe"
-            app:layout_constraintTop_toBottomOf="@+id/btn_restaurant"/>
-        <ImageButton
-            android:id="@+id/btn_culture"
-            android:layout_width="119dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_culture"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/btn_restaurant"
-            app:layout_constraintTop_toBottomOf="@+id/btn_cafe"/>
-        <ImageButton
-            android:id="@+id/btn_shopping"
-            android:layout_width="119dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_shopping"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/btn_cafe"
-            app:layout_constraintTop_toBottomOf="@+id/btn_walk"/>
-        <ImageButton
-            android:id="@+id/btn_play"
-            android:layout_width="119dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_play"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/btn_restaurant"
-            app:layout_constraintTop_toBottomOf="@+id/btn_culture"/>
-        <ImageButton
-            android:id="@+id/btn_vacation"
-            android:layout_width="119dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:scaleType="fitCenter"
-            android:src="@drawable/btn_vacation"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/btn_play"
-            app:layout_constraintTop_toBottomOf="@+id/btn_shopping"/>
-
-    <View
-        android:id="@+id/line2"
-        android:layout_width="390dp"
-        android:layout_height="2dp"
-        app:layout_constraintTop_toBottomOf="@+id/btn_vacation"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <ImageButton
+        android:id="@+id/btn_walk"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
         android:layout_marginTop="20dp"
-        android:background="#D0B4B4"/>
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_place_walk"
+        app:layout_constraintStart_toStartOf="@+id/btn_restaurant"
+        app:layout_constraintTop_toBottomOf="@+id/btn_restaurant" />
+
+    <ImageButton
+        android:id="@+id/btn_culture"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_place_culture"
+        app:layout_constraintEnd_toEndOf="@+id/btn_cafe"
+        app:layout_constraintTop_toTopOf="@+id/btn_walk" />
+
+    <ImageButton
+        android:id="@+id/btn_shopping"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_place_shopping"
+        app:layout_constraintStart_toStartOf="@+id/btn_walk"
+        app:layout_constraintTop_toBottomOf="@+id/btn_walk" />
+
+    <ImageButton
+        android:id="@+id/btn_play"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_place_play"
+        app:layout_constraintEnd_toEndOf="@+id/btn_culture"
+        app:layout_constraintTop_toTopOf="@+id/btn_shopping" />
+
+    <ImageButton
+        android:id="@+id/btn_tour"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_place_tour"
+        app:layout_constraintStart_toStartOf="@+id/btn_shopping"
+        app:layout_constraintTop_toBottomOf="@+id/btn_shopping" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
         android:text="선택한 카테고리"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line2"
-        app:layout_constraintBottom_toBottomOf="@id/btn_reset"/>
+        tools:layout_editor_absoluteY="396dp" />
 
     <Button
         android:id="@+id/btn_reset"
         android:layout_width="100dp"
         android:layout_height="48dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="28dp"
         android:backgroundTint="@color/white"
         android:text="초기화"
         android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line2"/>
+        tools:layout_editor_absoluteY="383dp" />
 
     <HorizontalScrollView
         android:layout_width="wrap_content"
@@ -182,12 +125,12 @@
 
     <ImageButton
         android:id="@+id/btn_next"
-        android:layout_width="103dp"
-        android:layout_height="43dp"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
         android:background="@color/white"
         android:scaleType="fitCenter"
         android:src="@drawable/btn_next"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />

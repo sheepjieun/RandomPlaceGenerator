@@ -35,16 +35,15 @@
 
     <ImageButton
         android:id="@+id/btn_ok"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
         android:scaleType="fitCenter"
-        android:src="@drawable/btn_ok_long"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/btn_check"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_id"
-        app:layout_constraintVertical_bias="0.098"
         tools:ignore="DuplicateIds" />
 </androidx.constraintlayout.widget.ConstraintLayout>

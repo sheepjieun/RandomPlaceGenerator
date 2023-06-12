@@ -5,17 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="363dp"
-        android:layout_height="565dp"
-        android:layout_marginLeft="15dp"
-        android:id="@+id/map_view">
-
-    </RelativeLayout>
-
-<!--    <WebView-->
+    <!--    <WebView-->
 <!--        android:id="@+id/webView"-->
 <!--        android:layout_width="357dp"-->
 <!--        android:layout_height="560dp"-->
@@ -25,40 +15,39 @@
 <!--        app:layout_constraintTop_toTopOf="parent"/>-->
 
 
+    <RelativeLayout
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/btnCosCreate"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_course_create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
     <ImageButton
         android:id="@+id/btnCosRecommend"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="640dp"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:scaleType="fitCenter"
         android:src="@drawable/btn_course_recommend"
-        android:background="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <Button
-        android:id="@+id/btnCosSetting"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="104dp"
-        android:layout_marginTop="695dp"
-        android:background="@color/white"
-        android:text="코스 수동 설정"
-        android:textColor="#8A8A8A"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnRandom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="344dp"
-        android:layout_marginTop="640dp"
-        android:background="@color/white"
-        android:src="@drawable/btn_random"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toEndOf="@+id/btnCosCreate"
+        app:layout_constraintTop_toTopOf="@+id/btnCosCreate" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
