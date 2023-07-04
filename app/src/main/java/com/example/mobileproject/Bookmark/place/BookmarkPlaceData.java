@@ -2,9 +2,29 @@ package com.example.mobileproject.Bookmark.place;
 
 public class BookmarkPlaceData {
     private String placeName;
-    private String placeLocation;
-    private int placeImageView;
-    private String placeKategorie;
+    private String addressName;
+    private String categoryName;
+    //TODO 이미지변수 일단은 주석처리 + 기본 생성자 추가 + 변수명 변경
+    private String imgURL;
+
+    public BookmarkPlaceData(){
+
+    }
+
+    public BookmarkPlaceData(String placeName, String addressName, String categoryName , String imgURL) {
+        this.placeName = placeName;
+        this.addressName = addressName;
+        this.categoryName = categoryName;
+        this.imgURL = imgURL;
+    }
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL =  "https:" + imgURL;
+    }
 
     public String getPlaceName() {
         return placeName;
@@ -14,34 +34,29 @@ public class BookmarkPlaceData {
         this.placeName = placeName;
     }
 
-    public String getPlaceLocation() {
-        return placeLocation;
+    public String getAddressName() {
+        return addressName;
     }
 
-    public void setPlaceLocation(String placeLocation) {
-        this.placeLocation = placeLocation;
+    public void setAddressName(String addressName) {
+        this.addressName = addressName;
     }
 
-    public int getPlaceImageView() {
-        return placeImageView;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setPlaceImageView(int placeImageView) {
-        this.placeImageView = placeImageView;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
+    //public int getPlaceImageVIew() {
+    //return placeImageVIew;
+    //}
 
-    public String getPlaceKategorie() {
-        return placeKategorie;
-    }
+    //public void setPlaceImageVIew(int placeImageVIew) {
+    //this.placeImageVIew = placeImageVIew;
+    //}
 
-    public void setPlaceKategorie(String placeKategorie) {
-        this.placeKategorie = placeKategorie;
-    }
 
-    public BookmarkPlaceData(String placeName, String placeLocation, int placeImageView, String placeKategorie) {
-        this.placeName = placeName;
-        this.placeLocation = placeLocation;
-        this.placeImageView = placeImageView;
-        this.placeKategorie = placeKategorie;
-    }
+
 }

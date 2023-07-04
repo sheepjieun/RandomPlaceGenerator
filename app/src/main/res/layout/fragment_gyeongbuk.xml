@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.GyeongbukFragment">
+    tools:context="Recommend.fragment.GyeongbukFragment">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnGyeongbukAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="경북 전체"
@@ -25,6 +25,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukGyeongsan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="경산시"
@@ -34,6 +35,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukGyeongju"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="경주시"
@@ -43,6 +45,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukGoryeong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="고령군"
@@ -52,6 +55,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukGumi"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="구미시"
@@ -61,6 +65,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukGunwi"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="군위군"
@@ -70,6 +75,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukGimcheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="김천시"
@@ -79,6 +85,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukMungyeong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="문경시"
@@ -88,6 +95,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukBonghwa"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="봉화군"
@@ -97,6 +105,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukSangju"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="상주시"
@@ -106,6 +115,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukSeongju"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="성주군"
@@ -115,6 +125,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukAndong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="안동시"
@@ -133,6 +144,7 @@
         app:layout_constraintLeft_toRightOf="@+id/layout1"
         app:layout_constraintTop_toTopOf="parent">
         <Button
+            android:id="@+id/btnGyeongbukYeongdeok"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="영덕군"
@@ -142,6 +154,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukYeongyang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="영양군"
@@ -151,6 +164,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukYeongju"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="영주시"
@@ -160,6 +174,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukYeongcheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="영천시"
@@ -169,6 +184,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukYecheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="예천군"
@@ -178,6 +194,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukUlleung"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="울릉군"
@@ -187,6 +204,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukUljin"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="울진군"
@@ -196,6 +214,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukUiseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="의성군"
@@ -205,6 +224,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukCheongdo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="청도군"
@@ -214,6 +234,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukCheongsong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="청송군"
@@ -223,6 +244,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukChilgok"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="칠곡군"
@@ -232,6 +254,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnGyeongbukPohang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="포항시"

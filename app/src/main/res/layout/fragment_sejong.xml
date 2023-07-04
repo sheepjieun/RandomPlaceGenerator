@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.SejongFragment">
-
+    tools:context="Recommend.fragment.SejongFragment">
 
     <LinearLayout
         android:id="@+id/layout1"
@@ -14,8 +13,9 @@
         android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnSejongAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="세종 전체"
@@ -34,7 +34,9 @@
         android:orientation="vertical"
         app:layout_constraintLeft_toRightOf="@+id/layout1"
         app:layout_constraintTop_toTopOf="parent">
+
         <Button
+            android:id="@+id/btnSejongCity"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="세종시"
@@ -43,9 +45,6 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
-
-
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

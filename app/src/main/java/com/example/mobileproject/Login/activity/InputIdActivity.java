@@ -27,6 +27,9 @@ public class InputIdActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_id);
 
+        //액션바 타이틀, 뒤로가기
+        setupActionBar("비밀번호 찾기", true);
+
         et_id = findViewById(R.id.et_id);
         ImageButton btn_ok = findViewById(R.id.btn_ok);
 

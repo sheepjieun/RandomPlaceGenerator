@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.DagueFragment">
+    tools:context="Recommend.fragment.DagueFragment">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnDaeguAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="대구 전체"
@@ -25,6 +25,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnDaeguNam"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="남구"
@@ -35,6 +36,7 @@
             android:textColor="@color/black"/>
 
         <Button
+            android:id="@+id/btnDaeguDalseo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="달서구"
@@ -44,6 +46,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnDaeguDalseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="달성군"
@@ -53,6 +56,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnDaeguDong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="동구"
@@ -72,6 +76,7 @@
         app:layout_constraintLeft_toRightOf="@+id/layout1"
         app:layout_constraintTop_toTopOf="parent">
         <Button
+            android:id="@+id/btnDaeguBuk"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="북구"
@@ -81,6 +86,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnDaeguSeo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="서구"
@@ -90,6 +96,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnDaeguSuseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="수성구"
@@ -99,6 +106,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnDaeguJung"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="중구"

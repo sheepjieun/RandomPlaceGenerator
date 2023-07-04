@@ -53,4 +53,13 @@ public class MainActivity extends BaseActivity {
         각 메뉴 아이템 클릭에 따라 NavController가 적절한 네비게이션 액션을 수행
         이 때 네비게이션 액션은 nav_graph.xml에 정의된 대로 수행되며, 이를 통해 각 프래그먼트로의 이동이 가능*/
     }
+    // MainActivity
+    @Override
+    public void onResume() {
+        super.onResume();
+        // 활동이 재개될 때 항상 홈 프래그먼트를 선택하도록 합니다.
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+    }
+
 }

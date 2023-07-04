@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.UlsanFragment">
+    tools:context="Recommend.fragment.UlsanFragment">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnUlsanAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="울산 전체"
@@ -25,7 +25,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
-            android:id="@+id/namgu"
+            android:id="@+id/btnUlsanNamgu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="남구"
@@ -36,7 +36,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/donggu"
+            android:id="@+id/btnUlsanDonggu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="동구"
@@ -57,7 +57,7 @@
 
 
         <Button
-            android:id="@+id/bukgu"
+            android:id="@+id/btnUlsanBukgu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="북구"
@@ -68,7 +68,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/uljugun"
+            android:id="@+id/btnUlsanUlju"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="울주군"
@@ -79,7 +79,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/junggu"
+            android:id="@+id/btnUlsanJunggu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="중구"

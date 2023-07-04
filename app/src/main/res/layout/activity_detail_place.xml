@@ -5,62 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:layout_marginLeft="20dp"
-        android:backgroundTint="@color/white"
-        android:id="@+id/back_btn"
-        android:src="@drawable/btn_back2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="장소"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/place_text"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/white"
-        android:layout_marginLeft="60dp"
-        android:id="@+id/share_btn"
-        android:src="@drawable/btn_share2"
-        app:layout_constraintLeft_toRightOf="@+id/place_text"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/btn_hamburger"
-        android:layout_marginRight="10dp"
-        android:id="@+id/hamburger"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
 
     <FrameLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:layout_width="370dp"
         android:layout_height="800dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/place_text">
-
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/place_rv"

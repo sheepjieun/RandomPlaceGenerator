@@ -28,6 +28,9 @@ public class HintAnswerActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hint_answer);
 
+        //액션바 타이틀, 뒤로가기
+        setupActionBar("비밀번호 찾기", true);
+
         et_hintAnswer = findViewById(R.id.et_hintAnswer);
         ImageButton btn_ok = findViewById(R.id.btn_ok);
         TextView tv_id = findViewById(R.id.tv_id);

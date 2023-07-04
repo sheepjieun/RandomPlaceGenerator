@@ -78,7 +78,7 @@ public class BookmarkCourseListItemAdapter extends RecyclerView.Adapter<Bookmark
             this.cosImageView = (ImageView)itemView.findViewById(R.id.courseImageView);
             this.cosName = (TextView) itemView.findViewById(R.id.courseName);
             this.cosLocation = (TextView) itemView.findViewById(R.id.courseLocation);
-            this.cosMenuBtn = (ImageView) itemView.findViewById(R.id.courseMenuBtn);
+            //this.cosMenuBtn = (ImageView) itemView.findViewById(R.id.courseMenuBtn);
         }
     }
 }

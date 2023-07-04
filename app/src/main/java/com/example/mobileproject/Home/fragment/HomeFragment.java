@@ -12,8 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mobileproject.Home.activity.BestCourseActivity;
 import com.example.mobileproject.R;
-import com.example.mobileproject.Home.activity.BestActivity;
+import com.example.mobileproject.Home.activity.BestPlaceActivity;
 import com.example.mobileproject.Home.adapter.BestAdapter;
 import com.example.mobileproject.basefragment.HomeBaseFragment;
 
@@ -32,42 +33,42 @@ public class HomeFragment extends HomeBaseFragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         // 이번달 인기 장소에 관한 리사이클러뷰 설정
-        RecyclerView recyclerViewPlace = view.findViewById(R.id.recyclerview_home_place);
-        recyclerViewPlace.setHasFixedSize(true);
-        LinearLayoutManager layoutManagerPlace = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewPlace.setLayoutManager(layoutManagerPlace);
+//        RecyclerView recyclerViewPlace = view.findViewById(R.id.recyclerview_home_place);
+//        recyclerViewPlace.setHasFixedSize(true);
+//        LinearLayoutManager layoutManagerPlace = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+//        recyclerViewPlace.setLayoutManager(layoutManagerPlace);
 
         List<String> myDatasetPlace = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            myDatasetPlace.add("홈화면 장소 " + (i+1));
+            myDatasetPlace.add("홈화면 장소 " + (i+1)); //TODO DB로 가져오기
         }
         BestAdapter mAdapterPlace = new BestAdapter(myDatasetPlace);
-        recyclerViewPlace.setAdapter(mAdapterPlace);
+//        recyclerViewPlace.setAdapter(mAdapterPlace);
 
         // 이번달 인기 코스에 관한 리사이클러뷰 설정
-        RecyclerView recyclerViewCourse = view.findViewById(R.id.recyclerview_home_course);
-        recyclerViewCourse.setHasFixedSize(true);
-        LinearLayoutManager layoutManagerCourse = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewCourse.setLayoutManager(layoutManagerCourse);
+//        RecyclerView recyclerViewCourse = view.findViewById(R.id.recyclerview_home_course);
+//        recyclerViewCourse.setHasFixedSize(true);
+//        LinearLayoutManager layoutManagerCourse = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+//        recyclerViewCourse.setLayoutManager(layoutManagerCourse);
 
         List<String> myDatasetCourse = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            myDatasetCourse.add("홈화면 코스 " + (i+1));
+            myDatasetCourse.add("홈화면 코스 " + (i+1)); //TODO DB로 가져오기
         }
         BestAdapter mAdapterCourse = new BestAdapter(myDatasetCourse);
-        recyclerViewCourse.setAdapter(mAdapterCourse);
+//        recyclerViewCourse.setAdapter(mAdapterCourse);
 
         // 장소, 코스 더보기 버튼
         Button btn_bestPlace = view.findViewById(R.id.btn_bestPlace);
         Button btn_bestCourse = view.findViewById(R.id.btn_bestCourse);
 
         btn_bestPlace.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), BestActivity.class);
+            Intent intent = new Intent(getActivity(), BestPlaceActivity.class);
             startActivity(intent);
         });
 
         btn_bestCourse.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), BestActivity.class);
+            Intent intent = new Intent(getActivity(), BestCourseActivity.class);
             startActivity(intent);
         });
 

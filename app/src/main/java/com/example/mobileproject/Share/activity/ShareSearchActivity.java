@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -25,7 +26,7 @@ import com.example.mobileproject.baseactivity.BaseActivity;
 public class ShareSearchActivity extends BaseActivity {
 
     EditText editText;
-    ImageButton cancle , search;
+    Button search;
     LinearLayout historyLayout;
     ArrayList<String> searchHistory;
 
@@ -39,15 +40,9 @@ public class ShareSearchActivity extends BaseActivity {
 
         searchHistory = new ArrayList<>();
 
-        cancle = findViewById(R.id.cancle_button);
         search = findViewById(R.id.search_button);
 
-        cancle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editText.setText("");
-            }
-        });
+        //TODO cancle 삭제
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override

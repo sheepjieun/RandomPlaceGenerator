@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.mobileproject.R;
 import com.example.mobileproject.Login.repository.FindField;
@@ -20,6 +21,7 @@ public class FindIdActivity extends BaseActivity {
     private FirebaseAuth firebaseAuth; //파이어베이스 인증
     private FirebaseFirestore firestore; //firestore 데이터베이스
     private EditText et_phoneNumber;
+    private TextView tv_content;
 
     private final FindFieldInterface findFieldInterface = new FindField();
 
@@ -28,8 +30,10 @@ public class FindIdActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_id);
 
-        setupActionBar("아이디 찾기", true); //액션바 타이틀 설정
+        //액션바 타이틀, 뒤로가기
+        setupActionBar("아이디 찾기", true);
 
+        tv_content = findViewById(R.id.tv_content);
         et_phoneNumber = findViewById(R.id.et_phoneNumber);
         ImageButton btn_findId = findViewById(R.id.btn_findId);
 

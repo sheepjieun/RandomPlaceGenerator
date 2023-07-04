@@ -28,8 +28,6 @@ import java.util.List;
 
 public class ShareFragment extends ShareBaseFragment {
 
-
-
     CourseListFragment courseListFragment;
 
     FrameLayout list_frame , place_frame;
@@ -167,6 +165,10 @@ public class ShareFragment extends ShareBaseFragment {
                 }
             }
         });
+/*
+        //TODO 코드추가 추가했더니 액션바가 이상함
+        getFragmentManager().beginTransaction().replace(R.id.fragment, courseListFragment).commit();
+*/
 
         return view;
     }

@@ -1,11 +1,11 @@
 package com.example.mobileproject.Recommend.activitiy;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 
 import com.example.mobileproject.R;
@@ -26,10 +26,10 @@ import com.example.mobileproject.Recommend.fragment.JeonnamFragment;
 import com.example.mobileproject.Recommend.fragment.SejongFragment;
 import com.example.mobileproject.Recommend.fragment.SeoulFragment;
 import com.example.mobileproject.Recommend.fragment.UlsanFragment;
-import com.example.mobileproject.baseactivity.BaseActivity;
+import com.example.mobileproject.baseactivity.RecommendBaseActivity;
 
 
-public class RecommendActivity1 extends BaseActivity {
+public class RecommendActivity1 extends RecommendBaseActivity {
 
     private FragmentManager fragmentManager;
     private SeoulFragment fragmentSeoul;
@@ -56,7 +56,8 @@ public class RecommendActivity1 extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend1);
 
-        setupActionBar("지역 선택", true); //액션바 타이틀 설정
+        //액션바 타이틀, 뒤로가기
+        setupActionBar("지역 선택", false);
 
         fragmentManager = getSupportFragmentManager();
         fragmentSeoul = new SeoulFragment();
@@ -77,7 +78,7 @@ public class RecommendActivity1 extends BaseActivity {
         fragmentSejong = new SejongFragment();
         fragmentUlsan = new UlsanFragment();
 
-
+        RecommendActivity3.selected_region = "서울시 ";
         transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.linearLayout, fragmentSeoul).commit();
     }
@@ -87,74 +88,98 @@ public class RecommendActivity1 extends BaseActivity {
         switch (view.getId()){
             case R.id.btn_seoul:
                 Log.d("TAG", "clickHandler: seoul");
+                RecommendActivity3.selected_region = "서울시 ";
                 transaction.replace(R.id.linearLayout, fragmentSeoul).commit();
                 break;
             case R.id.btn_busan:
                 Log.d("TAG", "clickHandler: busan");
+                RecommendActivity3.selected_region = "부산시 ";
                 transaction.replace(R.id.linearLayout, fragmentBusan).commit();
                 break;
             case R.id.btn_incheon:
                 Log.d("TAG", "clickHandler: incheon");
+                RecommendActivity3.selected_region = "인천시 ";
                 transaction.replace(R.id.linearLayout, fragmentIncheon).commit();
                 break;
             case R.id.btn_daegu:
                 Log.d("TAG", "clickHandler: daegu");
+                RecommendActivity3.selected_region = "대구시 ";
                 transaction.replace(R.id.linearLayout, fragmentDague).commit();
                 break;
             case R.id.btn_chungbuk:
                 Log.d("TAG", "clickHandler: chungbuk");
+                RecommendActivity3.selected_region = "충청북도 ";
                 transaction.replace(R.id.linearLayout, fragmentChungbuk).commit();
                 break;
             case R.id.btn_chungnam:
                 Log.d("TAG", "clickHandler: chungnam");
+                RecommendActivity3.selected_region = "충청남도 ";
                 transaction.replace(R.id.linearLayout, fragmentChungnam).commit();
                 break;
             case R.id.btn_daejeon:
                 Log.d("TAG", "clickHandler: daejeon");
+                RecommendActivity3.selected_region = "대전시 ";
                 transaction.replace(R.id.linearLayout, fragmentDaejeon).commit();
                 break;
             case R.id.btn_gangwon:
                 Log.d("TAG", "clickHandler: gangwon");
+                RecommendActivity3.selected_region = "강원도 ";
                 transaction.replace(R.id.linearLayout, fragmentGangwon).commit();
                 break;
             case R.id.btn_gwangju:
                 Log.d("TAG", "clickHandler: gwangju");
+                RecommendActivity3.selected_region = "광주시 ";
                 transaction.replace(R.id.linearLayout, fragmentGwangju).commit();
                 break;
             case R.id.btn_gyeongbuk:
                 Log.d("TAG", "clickHandler: gyeongbuk");
+                RecommendActivity3.selected_region = "경상북도 ";
                 transaction.replace(R.id.linearLayout, fragmentGyeongbuk).commit();
                 break;
             case R.id.btn_gyeonggi:
                 Log.d("TAG", "clickHandler: gyeonggi");
+                RecommendActivity3.selected_region = "경기도 ";
                 transaction.replace(R.id.linearLayout, fragmentGyeonggi).commit();
                 break;
             case R.id.btn_gyeongnam:
                 Log.d("TAG", "clickHandler: gyeongnam");
+                RecommendActivity3.selected_region = "경상남도 ";
                 transaction.replace(R.id.linearLayout, fragmentGyeongnam).commit();
                 break;
             case R.id.btn_jeju:
                 Log.d("TAG", "clickHandler: jeju");
+                RecommendActivity3.selected_region = "제주도 ";
                 transaction.replace(R.id.linearLayout, fragmentJeju).commit();
                 break;
             case R.id.btn_jeonbuk:
                 Log.d("TAG", "clickHandler: jeonbuk");
+                RecommendActivity3.selected_region = "전라북도 ";
                 transaction.replace(R.id.linearLayout, fragmentJeonbuk).commit();
                 break;
             case R.id.btn_jeonnam:
                 Log.d("TAG", "clickHandler: jeonnam");
+                RecommendActivity3.selected_region = "전라남도 ";
                 transaction.replace(R.id.linearLayout, fragmentJeonnam).commit();
                 break;
             case R.id.btn_sejong:
                 Log.d("TAG", "clickHandler: sejong");
+                RecommendActivity3.selected_region = "세종시 ";
                 transaction.replace(R.id.linearLayout, fragmentSejong).commit();
                 break;
             case R.id.btn_ulsan:
                 Log.d("TAG", "clickHandler: ulsan");
+                RecommendActivity3.selected_region = "울산시 ";
                 transaction.replace(R.id.linearLayout, fragmentUlsan).commit();
                 break;
             default:
                 break;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.close_menu, menu); // your_menu.xml 이 메뉴 리소스의 이름
+        return true;
     }
 }

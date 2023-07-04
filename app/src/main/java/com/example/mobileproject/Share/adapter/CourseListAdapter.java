@@ -138,10 +138,10 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
 
                             }
                         }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
 
-                                    }
+                            }
                         });
                     }
                 } else{

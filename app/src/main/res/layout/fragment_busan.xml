@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.BusanFragment">
-
+    tools:context="Recommend.fragment.BusanFragment">
 
     <LinearLayout
         android:id="@+id/layout1"
@@ -14,8 +13,9 @@
         android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnBusanAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="부산 전체"
@@ -24,7 +24,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanGangseo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="강서구"
@@ -35,6 +37,7 @@
             android:textColor="@color/black"/>
 
         <Button
+            android:id="@+id/btnBusanGeumjeong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="금정구"
@@ -43,7 +46,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanGijang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="기장군"
@@ -52,7 +57,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanNamgu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="남구"
@@ -61,7 +68,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanDonggu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="동구"
@@ -70,7 +79,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanDongnae"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="동래구"
@@ -79,7 +90,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanBusanjin"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="부산진구"
@@ -88,7 +101,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanBukgu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="북구"
@@ -97,8 +112,6 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
-
-
 
     </LinearLayout>
 
@@ -109,7 +122,9 @@
         android:orientation="vertical"
         app:layout_constraintLeft_toRightOf="@+id/layout1"
         app:layout_constraintTop_toTopOf="parent">
+
         <Button
+            android:id="@+id/btnBusanSasang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="사상구"
@@ -118,7 +133,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanSaha"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="사하구"
@@ -127,7 +144,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanSeo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="서구"
@@ -136,7 +155,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanSuyeong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="수영구"
@@ -145,7 +166,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanYeonje"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="연제구"
@@ -154,7 +177,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanYeongdo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="영도구"
@@ -163,7 +188,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanJunggu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="중구"
@@ -172,7 +199,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnBusanHaeundae"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="해운대구"

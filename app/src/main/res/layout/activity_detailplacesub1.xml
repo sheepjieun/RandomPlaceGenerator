@@ -6,19 +6,20 @@
     android:orientation="vertical">
 
 
+    <!-- TODO 코드 변경 TextView아래1개 !-->
     <ImageView
         android:id="@+id/place_img"
         android:layout_width="350dp"
         android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:src="@drawable/btn_commend" />
+        android:layout_gravity="center" />
 
     <TextView
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="장소명"
-        android:layout_marginTop="20dp"
+        android:text=""
+        android:id="@+id/place_text"
+        android:layout_marginTop="50dp"
         android:textColor="@color/black"
         android:textSize="20sp"/>
 
@@ -27,23 +28,27 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/line1">
+
+        <!-- TODO 버튼 id 값 속성 추가 및 btn_bookmark1로 값 수정 !-->
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#ffffff"
+            android:id="@+id/place_sub_like_button"
+            android:drawableTop="@drawable/ic_good"
+            android:text="0"
+            android:textColor="#8B8B8B" />
 
         <Button
             android:layout_width="70dp"
-            android:layout_height="100dp"
-            android:backgroundTint="#D9D9D9"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#ffffff"
             android:textColor="#8B8B8B"
+            android:id="@+id/place_sub_bookmark_button"
             android:text="0"
-            android:drawableTop="@drawable/btn_commend"/>
-        <Button
-            android:layout_width="70dp"
-            android:layout_height="100dp"
-            android:backgroundTint="#D9D9D9"
-            android:textColor="#8B8B8B"
-            android:text="0"
-            android:drawableTop="@drawable/btn_bookmark"/>
+            android:drawableTop="@drawable/ic_bookmark"/>
 
     </LinearLayout>
 
@@ -53,7 +58,7 @@
         android:id="@+id/local_text"
         android:text="주소 : "
         android:textSize="20sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:textColor="@color/black"/>
     <TextView
         android:layout_width="match_parent"
@@ -66,27 +71,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/locate_text"
-        android:text="내거리에서 000M 위치 "
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/number_text"
         android:text="전화번호 : "
         android:textSize="20sp"
         android:layout_marginTop="20dp"
         android:textColor="@color/black"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/review_text"
-        android:text="리뷰 : "
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"/>
+
 
 
 

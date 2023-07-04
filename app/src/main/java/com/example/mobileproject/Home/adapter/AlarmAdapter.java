@@ -8,16 +8,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileproject.R;
-import com.example.mobileproject.Home.data.Alarm;
+import com.example.mobileproject.Home.data.AlarmData;
 
 import java.util.List;
 
 public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> {
 
-    private List<Alarm> alarms;
+    private List<AlarmData> alarmData;
 
-    public AlarmAdapter(List<Alarm> alarms) {
-        this.alarms = alarms;
+    public AlarmAdapter(List<AlarmData> alarmData) {
+        this.alarmData = alarmData;
     }
 
     @NonNull
@@ -29,14 +29,14 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Alarm alarm = alarms.get(position);
-        holder.tvTitle.setText(alarm.getTitle());
-        holder.tvContent.setText(alarm.getContent());
+        AlarmData alarmData = this.alarmData.get(position);
+        holder.tvTitle.setText(alarmData.getTitle());
+        holder.tvContent.setText(alarmData.getContent());
     }
 
     @Override
     public int getItemCount() {
-        return alarms.size();
+        return alarmData.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

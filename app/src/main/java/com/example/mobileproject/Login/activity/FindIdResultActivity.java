@@ -25,6 +25,9 @@ public class FindIdResultActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_id_result);
 
+        //액션바 타이틀, 뒤로가기
+        setupActionBar("아이디 찾기", true);
+
         tv_content = findViewById(R.id.tv_content);
         btn_ok = findViewById(R.id.btn_ok);
         btn_findPassword = findViewById(R.id.btn_findPassword);

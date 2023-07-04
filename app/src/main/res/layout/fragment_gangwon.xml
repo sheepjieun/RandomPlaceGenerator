@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.GangwonFragment">
-
+    tools:context="Recommend.fragment.GangwonFragment">
 
     <LinearLayout
         android:id="@+id/layout1"
@@ -14,8 +13,9 @@
         android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnGangwonAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="강원 전체"
@@ -24,7 +24,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonGangneung"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="강릉시"
@@ -35,6 +37,7 @@
             android:textColor="@color/black"/>
 
         <Button
+            android:id="@+id/btnGangwonGoseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="고성군"
@@ -43,7 +46,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonDonghae"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="동해시"
@@ -52,7 +57,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonSamcheok"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="삼척시"
@@ -61,7 +68,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonSokcho"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="속초시"
@@ -72,6 +81,7 @@
             android:textColor="@color/black"/>
 
         <Button
+            android:id="@+id/btnGangwonYanggu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="양구군"
@@ -80,7 +90,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonYangyang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="양양군"
@@ -89,7 +101,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonYeongwol"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="영월군"
@@ -98,7 +112,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonWonju"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="원주시"
@@ -117,7 +133,9 @@
         android:orientation="vertical"
         app:layout_constraintLeft_toRightOf="@+id/layout1"
         app:layout_constraintTop_toTopOf="parent">
+
         <Button
+            android:id="@+id/btnGangwonInje"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="인제군"
@@ -126,7 +144,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonJeongseon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="정선군"
@@ -135,7 +155,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonCheorwon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="철원군"
@@ -144,7 +166,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonChuncheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="춘천시"
@@ -153,7 +177,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonTaebaek"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="태백시"
@@ -164,6 +190,7 @@
             android:textColor="@color/black"/>
 
         <Button
+            android:id="@+id/btnGangwonPyeongchang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="평창군"
@@ -172,7 +199,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonHongcheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="홍천군"
@@ -181,7 +210,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonHwacheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="화천군"
@@ -190,7 +221,9 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
+
         <Button
+            android:id="@+id/btnGangwonHoengseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="횡성군"
@@ -200,5 +233,4 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

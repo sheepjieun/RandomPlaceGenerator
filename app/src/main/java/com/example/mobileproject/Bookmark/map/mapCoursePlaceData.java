@@ -4,18 +4,18 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class mapCoursePlaceData {
 
-    private int mapImageView;
+    private String mapImageView;
     private String mapName;
     private String mapLocation;
     private String mapCategory;
     private ConstraintLayout mapLayout;
     private boolean mapCheck;
 
-    public int getMapImageView() {
+    public String getMapImageView() {
         return mapImageView;
     }
 
-    public void setMapImageView(int mapImageView) {
+    public void setMapImageView(String mapImageView) {
         this.mapImageView = mapImageView;
     }
 
@@ -59,7 +59,7 @@ public class mapCoursePlaceData {
         this.mapCheck = mapCheck;
     }
 
-    public mapCoursePlaceData(int mapImageView, String mapName, String mapLocation, String mapCategory) {
+    public mapCoursePlaceData(String mapImageView, String mapName, String mapLocation, String mapCategory) {
         this.mapImageView = mapImageView;
         this.mapName = mapName;
         this.mapLocation = mapLocation;
@@ -67,3 +67,6 @@ public class mapCoursePlaceData {
         this.mapCheck = true;
     }
 }
+
+
+//TODO.해당 파일 변경

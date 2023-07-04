@@ -7,7 +7,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Document implements Parcelable {
-
     @SerializedName("place_name")
     @Expose
     private String placeName;
@@ -44,21 +43,25 @@ public class Document implements Parcelable {
     @SerializedName("y")
     @Expose
     private String y;
+    private String imgURL;
 
-    public String getPlaceName() {
-        return placeName;
-    }
-
-    public void setPlaceName(String placeName) {
+    //TODO 생성자 추가
+    public Document(String placeName, String categoryName, String addressName, String phone, String x, String y , String imgURL) {
         this.placeName = placeName;
+        this.categoryName = categoryName;
+        this.addressName = addressName;
+        this.phone = phone;
+        this.x = x;
+        this.y = y;
+        this.imgURL = imgURL;
     }
 
-    public String getDistance() {
-        return distance;
+    public String getImgURL() {
+        return imgURL;
     }
 
-    public void setDistance(String distance) {
-        this.distance = distance;
+    public void setImgURL(String imgURL) {
+        this.imgURL = "https:"+imgURL;
     }
 
     public String getPlaceUrl() {
@@ -67,46 +70,6 @@ public class Document implements Parcelable {
 
     public void setPlaceUrl(String placeUrl) {
         this.placeUrl = placeUrl;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public String getAddressName() {
-        return addressName;
-    }
-
-    public void setAddressName(String addressName) {
-        this.addressName = addressName;
-    }
-
-    public String getRoadAddressName() {
-        return roadAddressName;
-    }
-
-    public void setRoadAddressName(String roadAddressName) {
-        this.roadAddressName = roadAddressName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     public String getCategoryGroupCode() {
@@ -125,6 +88,38 @@ public class Document implements Parcelable {
         this.categoryGroupName = categoryGroupName;
     }
 
+    public String getPlaceName() {
+        return placeName;
+    }
+
+    public void setPlaceName(String placeName) {
+        this.placeName = placeName;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getAddressName() {
+        return addressName;
+    }
+
+    public void setAddressName(String addressName) {
+        this.addressName = addressName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getX() {
         return x;
     }
@@ -140,7 +135,6 @@ public class Document implements Parcelable {
     public void setY(String y) {
         this.y = y;
     }
-
 
     @Override
     public int describeContents() {
@@ -180,6 +174,7 @@ public class Document implements Parcelable {
         this.x = in.readString();
         this.y = in.readString();
     }
+
 
     public static final Creator<Document> CREATOR = new Creator<Document>() {
         @Override

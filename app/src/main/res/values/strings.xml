@@ -1,19 +1,9 @@
 <resources>
-    <string name="app_name">MobileProject</string>
+    <string name="app_name">우리어디가</string>
+
     <string name="title_home">홈</string>
     <string name="title_recommend">추천</string>
     <string name="title_bookmark">북마크</string>
     <string name="title_share">공유</string>
     <string name="terms">약관</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_test_login">TestLoginActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

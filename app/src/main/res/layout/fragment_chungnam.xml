@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.ChungnamFragment">
+    tools:context="Recommend.fragment.ChungnamFragment">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnChungnamAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="충남 전체"
@@ -25,6 +25,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamGyeryong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="계룡시"
@@ -35,6 +36,7 @@
             android:textColor="@color/black"/>
 
         <Button
+            android:id="@+id/btnChungnamGongju"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="공주시"
@@ -44,6 +46,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamGeumsan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="금산군"
@@ -53,6 +56,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamNonsan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="논산시"
@@ -62,6 +66,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamDangjin"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="당진시"
@@ -71,6 +76,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamBoryeong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="보령시"
@@ -80,6 +86,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamBuyeo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="부여군"
@@ -98,6 +105,7 @@
         app:layout_constraintLeft_toRightOf="@+id/layout1"
         app:layout_constraintTop_toTopOf="parent">
         <Button
+            android:id="@+id/btnChungnamSeosan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="서산시"
@@ -107,6 +115,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamSeocheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="서천군"
@@ -116,6 +125,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamAsan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="아산시"
@@ -125,6 +135,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamYesan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="예산군"
@@ -134,6 +145,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamCheonan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="천안시"
@@ -143,6 +155,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamCheongyang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="청양군"
@@ -152,6 +165,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamTaean"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="태안군"
@@ -161,6 +175,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnChungnamHongseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="홍성군"

@@ -8,18 +8,8 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/white"
-        android:src="@drawable/btn_disition"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="216dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="20dp"
         android:background="@color/white"
         android:src="@drawable/btn_navigation_cancel"
         app:layout_constraintLeft_toLeftOf="parent"

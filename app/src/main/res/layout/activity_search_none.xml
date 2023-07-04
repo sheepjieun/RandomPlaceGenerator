@@ -4,6 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<!--
 
     <TextView
         android:id="@+id/text_com"
@@ -18,10 +19,10 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="40dp"
         android:layout_marginStart="10dp"/>
-    <!-- 이미지 검색  !-->
+    &lt;!&ndash; 이미지 검색  !&ndash;&gt;
 
-    <!-- 이미지 알람  !-->
-    <!-- 이미지들은 자바에서 onclick 속성 넣어주기 !-->
+    &lt;!&ndash; 이미지 알람  !&ndash;&gt;
+    &lt;!&ndash; 이미지들은 자바에서 onclick 속성 넣어주기 !&ndash;&gt;
     <ImageButton
         android:id="@+id/search_img"
         android:layout_width="30dp"
@@ -33,17 +34,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/alarm_img"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:src="@drawable/alarm"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="370dp"
-        android:layout_marginTop="40dp" />
 
-    <!-- 버튼 레이아웃과 거리두기 위한 25dp line !-->
+
+    &lt;!&ndash; 버튼 레이아웃과 거리두기 위한 25dp line !&ndash;&gt;
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -54,7 +47,7 @@
 
         app:layout_constraintTop_toBottomOf="@+id/text_com"/>
 
-    <!-- 버튼 레이아웃 !-->
+    &lt;!&ndash; 버튼 레이아웃 !&ndash;&gt;
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="20dp"
@@ -64,7 +57,7 @@
 
     </LinearLayout>
 
-    <!-- 목록 레이아웃과 거리두기 위한 25dp line !-->
+    &lt;!&ndash; 목록 레이아웃과 거리두기 위한 25dp line !&ndash;&gt;
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,7 +66,7 @@
         android:id="@+id/line2"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/btn_line1"/>
-    <!-- 목록 버튼 !-->
+    &lt;!&ndash; 목록 버튼 !&ndash;&gt;
 
 
     <FrameLayout
@@ -182,6 +175,7 @@
             android:layout_height="wrap_content" />
 
     </FrameLayout>
+-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

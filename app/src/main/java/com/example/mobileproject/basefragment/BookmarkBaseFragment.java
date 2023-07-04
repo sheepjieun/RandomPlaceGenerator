@@ -36,7 +36,7 @@ public class BookmarkBaseFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_map:
+            case R.id.action_map_bookmark:
                 // 맵 동작 처리
                 Intent mapIntent = new Intent(getActivity(), mapActivity.class);
                 startActivity(mapIntent);

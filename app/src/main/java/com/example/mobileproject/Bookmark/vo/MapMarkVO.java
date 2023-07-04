@@ -3,7 +3,6 @@ package com.example.mobileproject.Bookmark.vo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -46,10 +45,9 @@ public class MapMarkVO {
         this.category = category;
     }
 
-    public MapMarkVO(double lat, double lon, String name, String category) {
+    public MapMarkVO(double lat, double lon, String name) {
         this.lat = lat;
         this.lon = lon;
         this.name = name;
-        this.category = category;
     }
 }

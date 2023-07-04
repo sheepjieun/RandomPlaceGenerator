@@ -10,19 +10,40 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import com.example.mobileproject.R;
 import com.example.mobileproject.Recommend.activitiy.RecommendActivity2;
+import com.example.mobileproject.Recommend.activitiy.RecommendActivity3;
 
 public class DagueFragment extends Fragment implements View.OnClickListener{
 
+    int[] buttonIds = {
+            R.id.btnDaeguAll,
+            R.id.btnDaeguNam,
+            R.id.btnDaeguDalseo,
+            R.id.btnDaeguDalseong,
+            R.id.btnDaeguDong,
+            R.id.btnDaeguBuk,
+            R.id.btnDaeguSeo,
+            R.id.btnDaeguSuseong,
+            R.id.btnDaeguJung
+    };
+    Button[] buttons = new Button[9];
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View root = inflater.inflate(R.layout.fragment_dague, container, false);
-        Button btn_seoul1 = root.findViewById(R.id.seoul1);
-        btn_seoul1.setOnClickListener(this);
+        for(int i = 0; i<buttonIds.length; i++){
+            buttons[i] = root.findViewById(buttonIds[i]);
+            buttons[i].setOnClickListener(this);
+        }
         return root;
     }
 
     //서울 전체 누를 시 다음 화면으로 넘어감
     public void onClick(View view) {
+
+        if(view.getId() == R.id.btnDaeguAll)
+            RecommendActivity3.selected_region += "";
+        else{
+            RecommendActivity3.selected_region += ((Button) view).getText().toString();
+        }
         Intent intent = new Intent(getActivity(), RecommendActivity2.class);
         startActivity(intent);
     }

@@ -2,6 +2,7 @@ package com.example.mobileproject.Bookmark.map;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -22,14 +23,16 @@ public class mapCourseCategoryActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
 
+    //TODO 카테고리  변경, 추가
     //카테고리 선택 시 이미지
-    Integer[] images = {R.drawable.img_restaurant
-            , R.drawable.img_cafe
-            , R.drawable.img_walk
-            , R.drawable.img_culture
-            , R.drawable.img_shopping
-            , R.drawable.img_play
-            , R.drawable.img_vacation};
+    Integer[] images = {R.drawable.ic_place_restaurant
+            , R.drawable.ic_place_cafe
+            , R.drawable.ic_place_walk
+            , R.drawable.ic_place_shopping
+            , R.drawable.ic_place_culture
+            , R.drawable.ic_place_play
+            , R.drawable.ic_place_tour
+            , R.drawable.ic_place_stay};
 
     //카테고리 버튼 아이디
     int[] buttonIds = {R.id.btnMapCategory1
@@ -38,33 +41,36 @@ public class mapCourseCategoryActivity extends BaseActivity {
             , R.id.btnMapCategory4
             , R.id.btnMapCategory5
             , R.id.btnMapCategory6
-            , R.id.btnMapCategory7 };
+            , R.id.btnMapCategory7
+            , R.id.btnMapCategory8 };
 
     //비활성화 버튼
-    Integer[] images_disabled = {R.drawable.btn_restaurant_disabled
-            , R.drawable.btn_cafe_disabled
-            , R.drawable.btn_walk_disabled
-            , R.drawable.btn_culture_disabled
-            , R.drawable.btn_shopping_disabled
-            , R.drawable.btn_play_disabled
-            , R.drawable.btn_vacation_disabled};
+    Integer[] images_disabled = {R.drawable.btn_place_restaurant_disabled
+            , R.drawable.btn_place_cafe_disabled
+            , R.drawable.btn_place_walk_disabled
+            , R.drawable.btn_place_shopping_disabled
+            , R.drawable.btn_place_culture_disabled
+            , R.drawable.btn_place_play_disabled
+            , R.drawable.btn_place_tour_disabled
+            , R.drawable.btn_place_stay_disabled};
 
     //활성화 버튼
-    Integer[] images_activate = {R.drawable.btn_restaurant,
-            R.drawable.btn_cafe,
-            R.drawable.btn_walk,
-            R.drawable.btn_culture,
-            R.drawable.btn_shopping,
-            R.drawable.btn_play,
-            R.drawable.btn_vacation};
+    Integer[] images_activate = {R.drawable.btn_place_restaurant,
+            R.drawable.btn_place_cafe,
+            R.drawable.btn_place_walk,
+            R.drawable.btn_place_shopping,
+            R.drawable.btn_place_culture,
+            R.drawable.btn_place_play,
+            R.drawable.btn_place_tour,
+            R.drawable.btn_place_stay};
 
-    String[] location = {"음식점", "카페", "산책", "문화생활", "쇼핑", "놀거리", "휴양지"};
+    String[] location = {"음식점", "카페", "공원", "문화생활", "쇼핑", "놀거리", "관광명소", "숙소"};
 
     ImageButton[] btn_map_category = new ImageButton[buttonIds.length]; //카테고리 배열로 받기 위한 선언
-    ImageButton map_back, map_cancel, map_next; // 뒤로가기, 초기화, next
+    ImageButton map_cancel, map_next; // 초기화, next
 
     private ArrayList<String> categoryList = new ArrayList<>(); //받아온 카테고리 저장
-    int[] categoryNum = new int[7]; //받아온 카테고리가 각각 몇 개 있는지
+    int[] categoryNum = new int[8]; //받아온 카테고리가 각각 몇 개 있는지
 
     private ArrayList<String> listSelect = new ArrayList<>();  // 사용자가 선택한 카테고리 저장
 
@@ -92,9 +98,17 @@ public class mapCourseCategoryActivity extends BaseActivity {
         mapCourseCategoryAdapter = new mapCourseCategoryAdapter(arrayListItem);
         recyclerView.setAdapter(mapCourseCategoryAdapter);
 
-        String[] array = getIntent().getStringArrayExtra("cate");
+        //TODO.getIntent로 값을 받아옴
+        ArrayList<String> array = getIntent().getStringArrayListExtra("cate");
         if (array != null) {
-            categoryList.addAll(Arrays.asList(array));
+            Log.d("넘어온 데이터", Arrays.toString(array.toArray()));
+            categoryList = array;
+        } else {
+            Log.d("넘어온 데이터", "데이터가 존재하지 않습니다.");
+            // array가 null일 때 처리할 내용 작성
+        }
+        if (array != null) {
+            categoryList = getIntent().getStringArrayListExtra("cate");
         }
 
 
@@ -143,10 +157,14 @@ public class mapCourseCategoryActivity extends BaseActivity {
                         --categoryNum[i];
                         listSelect.add(location[i]);
                         break;
-
+                    case R.id.btnMapCategory8:
+                        i = 7;
+                        --categoryNum[i];
+                        listSelect.add(location[i]);
+                        break;
                 }
 
-                for(int j = 0; j < 7; j++){
+                for(int j = 0; j <8; j++){
                     if(categoryNum[j] == 0){
                         btn_map_category[j].setImageResource(images_disabled[j]);
                         btn_map_category[j].setEnabled(false);
@@ -171,6 +189,7 @@ public class mapCourseCategoryActivity extends BaseActivity {
         btn_map_category[4].setOnClickListener(buttonClickListener);
         btn_map_category[5].setOnClickListener(buttonClickListener);
         btn_map_category[6].setOnClickListener(buttonClickListener);
+        btn_map_category[7].setOnClickListener(buttonClickListener);
 
 
         //초기화 버튼 이벤트
@@ -212,7 +231,7 @@ public class mapCourseCategoryActivity extends BaseActivity {
                 case "카페":
                     ++categoryNum[1];
                     break;
-                case "산책":
+                case "공원":
                     ++categoryNum[2];
                     break;
                 case "문화생활":
@@ -224,14 +243,17 @@ public class mapCourseCategoryActivity extends BaseActivity {
                 case "놀거리":
                     ++categoryNum[5];
                     break;
-                case "휴양지":
+                case "관광명소":
                     ++categoryNum[6];
+                    break;
+                case "숙소":
+                    ++categoryNum[7];
                     break;
             }//switch
         }//for
 
         // 숫자가 1이상이면 활성화가 되고 0이면 비활성화
-        for(int i = 0; i < 7; i++){
+        for(int i = 0; i < 8; i++){
             if(categoryNum[i] == 0){
                 btn_map_category[i].setImageResource(images_disabled[i]);
                 btn_map_category[i].setEnabled(false);

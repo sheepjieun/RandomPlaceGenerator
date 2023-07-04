@@ -1,6 +1,8 @@
 package com.example.mobileproject.Bookmark.place;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +15,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileproject.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
 public class BookmarkPlaceFragment extends Fragment {
 
+
+    //TODO db변수선언 및 아래 더미값 주석처리
+    FirebaseFirestore db;
 
     // 필요한 멤버 변수들 선언
     private ArrayList<BookmarkPlaceData> arrayListItem; // 즐겨찾기 아이템 목록을 담는 ArrayList
@@ -26,11 +35,6 @@ public class BookmarkPlaceFragment extends Fragment {
     private LinearLayoutManager linearLayoutManager; // RecyclerView의 레이아웃 매니저
     private BookmarkPlaceData bookmarkData;
 
-    // 이미지, 이름, 위치 정보를 담은 배열
-    Integer[] images = {R.drawable.exam_ramen, R.drawable.exam_move, R.drawable.exam_mega, R.drawable.exam_roycafe, R.drawable.exam_wowpark, R.drawable.exam_janghone};
-    String[] name = {"멘야산다이메", "스즈메의 문단속", "메가박스 홍대점", "로이커피", "와우공원", "장호네"};
-    String[] location = {"홍대", "", "홍대", "까치산", "김포", "김포"};
-    String[] kategorie = {"음식점", "문화생활", "문화생활", "카페", "공원", "놀거리"};
     Button btnKaAll, btnKaRestaurant, btnKaCafe, btnKaPark, btnKaCulture, btnKaPlay, btnKaVacation, btnKaShopping;
 
 
@@ -45,9 +49,9 @@ public class BookmarkPlaceFragment extends Fragment {
         btnKaCafe = view.findViewById(R.id.btnKaCafe);
         btnKaCulture = view.findViewById(R.id.btnKaCultare);
         btnKaPark = view.findViewById(R.id.btnKaPark);
-        btnKaPlay = view.findViewById(R.id.btnKaPlay);
-        btnKaVacation = view.findViewById(R.id.btnKaVacation);
-        btnKaShopping = view.findViewById(R.id.btnKaShopping);
+//        btnKaPlay = view.findViewById(R.id.btnKaPlay);
+//        btnKaVacation = view.findViewById(R.id.btnKaVacation);
+//        btnKaShopping = view.findViewById(R.id.btnKaShopping);
 
         // RecyclerView 객체와 레이아웃 매니저 객체 생성
         recyclerView = view.findViewById(R.id.listViewPlace);
@@ -58,135 +62,270 @@ public class BookmarkPlaceFragment extends Fragment {
         arrayListItem = new ArrayList<>();
 
         // 즐겨찾기 아이템 어댑터 객체 생성
-        bookmarkListItemAdapter = new BookmarkPlaceListItemAdapter(arrayListItem);
+        bookmarkListItemAdapter = new BookmarkPlaceListItemAdapter(getActivity() , arrayListItem);
 
         // RecyclerView에 어댑터 연결
         recyclerView.setAdapter(bookmarkListItemAdapter);
 
 
+        //TODO 코드추가
+        db = FirebaseFirestore.getInstance();
+
+        db.collection("bookmark_place").get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                        for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
+
+                            BookmarkPlaceData bpd= documentSnapshot.toObject(BookmarkPlaceData.class);
+
+                            arrayListItem.add(bpd);
+                            Log.d("값추가" , "배열에 북마크값 추가" +bpd.getImgURL()+ bpd.getPlaceName() + bpd.getCategoryName());
+                        }
+                        bookmarkListItemAdapter.notifyDataSetChanged();
+                    }
+                });
+
         // 이미지, 이름, 위치 정보를 담은 배열에서 정보를 가져와서
         // BookmarkListItem 객체를 생성하여 ArrayList에 추가
-        for (int i = 0; i < name.length; i++) {
-            bookmarkData = new BookmarkPlaceData(name[i], location[i], images[i], kategorie[i]);
-            arrayListItem.add(bookmarkData);
-        }
+        //TODO 아래코드 다 수정
 
 
         btnKaAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnKaAll.setTextColor(Color.parseColor("#ffffff"));
+                btnKaRestaurant.setTextColor(Color.parseColor("#000000"));
+                btnKaCafe.setTextColor(Color.parseColor("#000000"));
+                btnKaCulture.setTextColor(Color.parseColor("#000000"));
+                btnKaPark.setTextColor(Color.parseColor("#000000"));
                 arrayListItem.clear();
-                bookmarkListItemAdapter.updateList(arrayListItem);
 
-                for (int i = 0; i < name.length; i++) {
-                    bookmarkData = new BookmarkPlaceData(name[i], location[i], images[i], kategorie[i]);
-                    arrayListItem.add(bookmarkData);
-                }
+                db.collection("bookmark_place")
+                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
+
+                                    BookmarkPlaceData bpd = documentSnapshot.toObject(BookmarkPlaceData.class);
+
+                                    arrayListItem.add(bpd);
+                                }
+                                bookmarkListItemAdapter.notifyDataSetChanged();
+                            }
+                        });
+
+
             }
         });
 
         btnKaRestaurant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnKaAll.setTextColor(Color.parseColor("#000000"));
+                btnKaRestaurant.setTextColor(Color.parseColor("#ffffff"));
+                btnKaCafe.setTextColor(Color.parseColor("#000000"));
+                btnKaCulture.setTextColor(Color.parseColor("#000000"));
+                btnKaPark.setTextColor(Color.parseColor("#000000"));
                 arrayListItem.clear();
-                bookmarkListItemAdapter.updateList(arrayListItem);
 
-                for(int i = 0; i < name.length; i++){
-                    if(kategorie[i] == "음식점"){
-                        bookmarkData = new BookmarkPlaceData(name[i], location[i], images[i], kategorie[i]);
-                        arrayListItem.add(bookmarkData);
-                    }
+                db.collection("bookmark_place")
+                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
-                }
+                                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
+
+                                    BookmarkPlaceData bpd = documentSnapshot.toObject(BookmarkPlaceData.class);
+
+                                    if (bpd.getCategoryName().equals("음식점")) {
+                                        arrayListItem.add(bpd);
+                                    }
+                                }
+                                bookmarkListItemAdapter.notifyDataSetChanged();
+                            }
+                        });
+
+
             }
         });
 
         btnKaCafe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnKaAll.setTextColor(Color.parseColor("#000000"));
+                btnKaRestaurant.setTextColor(Color.parseColor("#000000"));
+                btnKaCafe.setTextColor(Color.parseColor("#ffffff"));
+                btnKaCulture.setTextColor(Color.parseColor("#000000"));
+                btnKaPark.setTextColor(Color.parseColor("#000000"));
                 arrayListItem.clear();
-                bookmarkListItemAdapter.updateList(arrayListItem);
 
-                for(int i = 0; i < name.length; i++){
-                    if(kategorie[i] == "카페"){
-                        bookmarkData = new BookmarkPlaceData(name[i], location[i], images[i], kategorie[i]);
-                        arrayListItem.add(bookmarkData);
-                    }
-                }
+                db.collection("bookmark_place")
+                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
+
+                                    BookmarkPlaceData bpd = documentSnapshot.toObject(BookmarkPlaceData.class);
+
+                                    if (bpd.getCategoryName().equals("카페")) {
+                                        arrayListItem.add(bpd);
+                                    }
+                                }
+                                bookmarkListItemAdapter.notifyDataSetChanged();
+                            }
+                        });
+
+
             }
         });
 
         btnKaCulture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnKaAll.setTextColor(Color.parseColor("#000000"));
+                btnKaRestaurant.setTextColor(Color.parseColor("#000000"));
+                btnKaCafe.setTextColor(Color.parseColor("#000000"));
+                btnKaCulture.setTextColor(Color.parseColor("#ffffff"));
+                btnKaPark.setTextColor(Color.parseColor("#000000"));
                 arrayListItem.clear();
-                bookmarkListItemAdapter.updateList(arrayListItem);
 
-                for(int i = 0; i < name.length; i++){
-                    if(kategorie[i] == "문화생활"){
-                        bookmarkData = new BookmarkPlaceData(name[i], location[i], images[i], kategorie[i]);
-                        arrayListItem.add(bookmarkData);
-                    }
-                }
+                db.collection("bookmark_place")
+                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
+
+                                    BookmarkPlaceData bpd = documentSnapshot.toObject(BookmarkPlaceData.class);
+
+                                    if (bpd.getCategoryName().equals("문화")) {
+                                        arrayListItem.add(bpd);
+                                    }
+                                }
+                                bookmarkListItemAdapter.notifyDataSetChanged();
+                            }
+                        });
+
+
             }
         });
 
         btnKaPark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnKaAll.setTextColor(Color.parseColor("#000000"));
+                btnKaRestaurant.setTextColor(Color.parseColor("#000000"));
+                btnKaCafe.setTextColor(Color.parseColor("#000000"));
+                btnKaCulture.setTextColor(Color.parseColor("#000000"));
+                btnKaPark.setTextColor(Color.parseColor("#ffffff"));
                 arrayListItem.clear();
-                bookmarkListItemAdapter.updateList(arrayListItem);
 
-                for(int i = 0; i < name.length; i++){
-                    if(kategorie[i] == "공원"){
-                        bookmarkData = new BookmarkPlaceData(name[i], location[i], images[i], kategorie[i]);
-                        arrayListItem.add(bookmarkData);
-                    }
-                }
+                db.collection("bookmark_place")
+                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+
+                                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
+
+                                    BookmarkPlaceData bpd = documentSnapshot.toObject(BookmarkPlaceData.class);
+
+                                    if (bpd.getCategoryName().equals("공원")) {
+                                        arrayListItem.add(bpd);
+                                    }
+
+                                }
+                                bookmarkListItemAdapter.notifyDataSetChanged();
+                            }
+                        });
+
+
             }
         });
-        btnKaShopping.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                arrayListItem.clear();
-                bookmarkListItemAdapter.updateList(arrayListItem);
-
-                for(int i = 0; i < name.length; i++){
-                    if(kategorie[i] == "쇼핑"){
-                        bookmarkData = new BookmarkPlaceData(name[i], location[i], images[i], kategorie[i]);
-                        arrayListItem.add(bookmarkData);
-                    }
-                }
-            }
-        });
-        btnKaPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                arrayListItem.clear();
-                bookmarkListItemAdapter.updateList(arrayListItem);
-
-                for(int i = 0; i < name.length; i++){
-                    if(kategorie[i] == "놀거리"){
-                        bookmarkData = new BookmarkPlaceData(name[i], location[i], images[i], kategorie[i]);
-                        arrayListItem.add(bookmarkData);
-                    }
-                }
-            }
-        });
-        btnKaVacation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                arrayListItem.clear();
-                bookmarkListItemAdapter.updateList(arrayListItem);
-
-                for(int i = 0; i < name.length; i++){
-                    if(kategorie[i] == "휴양지"){
-                        bookmarkData = new BookmarkPlaceData(name[i], location[i], images[i], kategorie[i]);
-                        arrayListItem.add(bookmarkData);
-                    }
-                }
-            }
-        });
+//
+//        btnKaPlay.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                arrayListItem.clear();
+//
+//                db.collection("bookmark_place")
+//                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                            @Override
+//                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//
+//                                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
+//
+//                                    BookmarkPlaceData bpd = documentSnapshot.toObject(BookmarkPlaceData.class);
+//
+//                                    if (bpd.getCategoryName().equals("놀거리")) {
+//                                        arrayListItem.add(bpd);
+//                                    }
+//
+//                                }
+//                                bookmarkListItemAdapter.notifyDataSetChanged();
+//                            }
+//                        });
+//
+//
+//            }
+//        });
+//
+//        btnKaVacation.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                arrayListItem.clear();
+//
+//                db.collection("bookmark_place")
+//                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                            @Override
+//                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//
+//                                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
+//
+//                                    BookmarkPlaceData bpd = documentSnapshot.toObject(BookmarkPlaceData.class);
+//
+//                                    if (bpd.getCategoryName().equals("휴양지")) {
+//                                        arrayListItem.add(bpd);
+//                                    }
+//
+//                                }
+//                                bookmarkListItemAdapter.notifyDataSetChanged();
+//                            }
+//                        });
+//
+//
+//            }
+//        });
+//
+//        btnKaShopping.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                arrayListItem.clear();
+//
+//                db.collection("bookmark_place")
+//                        .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                            @Override
+//                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//
+//                                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()){
+//
+//                                    BookmarkPlaceData bpd = documentSnapshot.toObject(BookmarkPlaceData.class);
+//
+//                                    if (bpd.getCategoryName().equals("쇼핑")) {
+//                                        arrayListItem.add(bpd);
+//                                    }
+//
+//                                }
+//                                bookmarkListItemAdapter.notifyDataSetChanged();
+//                            }
+//                        });
+//
+//
+//            }
+//        });
 
 
         return view;

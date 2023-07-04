@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.GyeongnamFragment">
+    tools:context="Recommend.fragment.GyeongnamFragment">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnGyeongnamAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="경남 전체"
@@ -25,7 +25,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
-            android:id="@+id/geoje"
+            android:id="@+id/btnGyeongnamGeoje"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="거제시"
@@ -36,7 +36,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/geochang"
+            android:id="@+id/btnGyeongnamGeochang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="거창군"
@@ -47,7 +47,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/goseong"
+            android:id="@+id/btnGyeongnamGoseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="고성군"
@@ -58,7 +58,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/gimhae"
+            android:id="@+id/btnGyeongnamGimhae"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="김해시"
@@ -69,7 +69,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/namhae"
+            android:id="@+id/btnGyeongnamNamhae"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="남해군"
@@ -80,7 +80,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/miryang"
+            android:id="@+id/btnGyeongnamMiryang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="밀양시"
@@ -91,7 +91,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/sacheon"
+            android:id="@+id/btnGyeongnamSacheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="사천시"
@@ -102,7 +102,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/sancheong"
+            android:id="@+id/btnGyeongnamSancheong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="산청군"
@@ -113,7 +113,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/yangsan"
+            android:id="@+id/btnGyeongnamYangsan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="양산시"
@@ -122,9 +122,6 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
-
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -135,7 +132,7 @@
         app:layout_constraintLeft_toRightOf="@+id/layout1"
         app:layout_constraintTop_toTopOf="parent">
         <Button
-            android:id="@+id/uryeong"
+            android:id="@+id/btnGyeongnamUryeong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="의령군"
@@ -146,7 +143,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/jinju"
+            android:id="@+id/btnGyeongnamJinju"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="진주시"
@@ -157,7 +154,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/changnyeong"
+            android:id="@+id/btnGyeongnamChangnyeong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="창녕군"
@@ -168,7 +165,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/changwon"
+            android:id="@+id/btnGyeongnamChangwon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="창원시"
@@ -179,7 +176,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/tongyeong"
+            android:id="@+id/btnGyeongnamTongyeong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="통영시"
@@ -190,7 +187,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/hadong"
+            android:id="@+id/btnGyeongnamHadong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="하동군"
@@ -201,7 +198,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/haman"
+            android:id="@+id/btnGyeongnamHaman"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="함안군"
@@ -212,7 +209,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/hamyang"
+            android:id="@+id/btnGyeongnamHamyang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="함양군"
@@ -223,7 +220,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/hapcheon"
+            android:id="@+id/btnGyeongnamHapcheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="합천군"
@@ -232,7 +229,5 @@
             android:gravity="center"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

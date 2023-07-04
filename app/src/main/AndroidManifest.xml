@@ -4,6 +4,8 @@
     package="com.example.mobileproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:usesCleartextTraffic="true"
@@ -27,22 +29,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login.activity.ResetPasswordActivity"/>
+        <activity android:name=".Login.activity.ResetPasswordActivity" />
         <activity android:name=".Login.activity.HintAnswerActivity"/>
         <activity android:name=".Login.activity.InputIdActivity" />
         <activity android:name=".Login.activity.FindIdResultActivity"/>
         <activity android:name=".Login.activity.FindIdActivity" />
         <activity android:name=".Login.activity.RegisterActivity"/>
-        <activity android:name=".Login.activity.LoginActivity"/>
+        <activity android:name=".Login.activity.LoginActivity"  android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <!-- 홈 -->
         <activity android:name=".Home.activity.AlarmActivity"/>
-        <activity android:name=".Home.activity.BestActivity"/>
+        <activity android:name=".Home.activity.BestPlaceActivity"/>
         <activity android:name=".Home.activity.HomeSearchActivity" />
         <activity android:name=".Home.activity.MainActivity"/>
         <activity android:name=".Home.activity.MapActivity"/>
         <activity android:name=".Home.activity.MyPageActivity" />
         <activity android:name=".Home.activity.ShareSearchActivity" />
+
+
 
         <!-- 추천 -->
         <activity android:name=".Recommend.activitiy.RecommendActivity1" />

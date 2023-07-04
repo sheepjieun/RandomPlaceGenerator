@@ -7,13 +7,12 @@
     tools:context=".Bookmark.map.mapCourseCategoryActivity">
 
 
-
     <ImageButton
         android:id="@+id/btnMapCategory1"
         android:layout_width="160dp"
         android:layout_height="60dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
         android:background="@color/white"
         android:scaleType="fitCenter"
         android:src="@drawable/btn_place_restaurant"
@@ -24,11 +23,11 @@
         android:id="@+id/btnMapCategory2"
         android:layout_width="160dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="40dp"
         android:background="@color/white"
         android:scaleType="fitCenter"
-        android:layout_marginStart="15dp"
         android:src="@drawable/btn_place_cafe"
-        app:layout_constraintStart_toEndOf="@+id/btnMapCategory1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnMapCategory1" />
 
     <ImageButton
@@ -130,7 +129,6 @@
         android:src="@drawable/btn_next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent" />
 
 

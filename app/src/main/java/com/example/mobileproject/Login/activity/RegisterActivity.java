@@ -41,6 +41,9 @@ public class RegisterActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        //액션바 타이틀, 뒤로가기
+        setupActionBar("회원가입", true);
+
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
@@ -53,7 +56,7 @@ public class RegisterActivity extends BaseActivity {
         et_hintAnswer = findViewById(R.id.et_hintAnswer);
 
         //아이디중복확인, 회원가입 버튼
-        Button btn_checkId = findViewById(R.id.btn_checkId);
+        ImageButton btn_checkId = findViewById(R.id.btn_checkId);
         ImageButton btn_registerOK = findViewById(R.id.btn_registerOK);
 
 

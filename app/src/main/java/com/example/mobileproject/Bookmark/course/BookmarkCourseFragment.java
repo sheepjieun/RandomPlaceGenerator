@@ -34,9 +34,10 @@ public class BookmarkCourseFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        //화면 inflate
+       //화면 inflate
         View view = inflater.inflate(R.layout.bookmark_course_view, container, false);
-    //    View view_btn = inflater.inflate(R.layout.bookmark_fragment, container, false);
+        /*
+        View view_btn = inflater.inflate(R.layout.bookmark_fragment, container, false);
 
 
         // RecyclerView 객체와 레이아웃 매니저 객체 생성
@@ -59,7 +60,8 @@ public class BookmarkCourseFragment extends Fragment {
             BookmarkCourseData bookmarkListItem = new BookmarkCourseData(courseName[i], courseLocation[i], courseImages[i]);
             arrayListItem.add(bookmarkListItem);
         }
-
+        */
         return view;
+
     }
 }

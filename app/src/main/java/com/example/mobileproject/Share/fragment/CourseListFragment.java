@@ -38,12 +38,7 @@ public class CourseListFragment extends ShareBaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_text, container, false);
 
-        Bundle bundle = getArguments();
-
-        if(bundle != null){
-            String text = bundle.getString("s_key");
-            Log.d("getbundle" , bundle.getString("s_key"));
-        }
+        //TODO 코드 삭제
 
         db = FirebaseFirestore.getInstance();
         courseList = new ArrayList<>();
@@ -61,8 +56,10 @@ public class CourseListFragment extends ShareBaseFragment {
                         if (!queryDocumentSnapshots.isEmpty()) {
                             for (DocumentSnapshot d : queryDocumentSnapshots.getDocuments()) {
                                 CourseList cl = d.toObject(CourseList.class);
-                                courseList.add(cl);
-                                Log.d("db", cl.getName());
+                                if (cl != null && cl.getName() != null) { // Check if cl and cl.getName() is not null
+                                    courseList.add(cl);
+                                    Log.d("db", cl.getName());
+                                }
                             }
                             courseListAdapter.notifyDataSetChanged();
                         }
@@ -70,8 +67,8 @@ public class CourseListFragment extends ShareBaseFragment {
                 });
 
 
+
         return view;
     }
 
- }
-
+}

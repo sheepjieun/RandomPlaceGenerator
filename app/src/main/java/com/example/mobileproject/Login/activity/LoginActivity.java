@@ -48,8 +48,8 @@ public class LoginActivity extends AppCompatActivity {
 
         //로그인 버튼 클릭 시
         btn_login.setOnClickListener(v -> {
-            String strId = et_id.getText().toString();
-            String strPw = et_password.getText().toString();
+            String strId = et_id.getText().toString().trim();
+            String strPw = et_password.getText().toString().trim();
             if (strId.isEmpty() || strPw.isEmpty()) {
                 DialogUtil.showAlertDialog(LoginActivity.this, "로그인", "아이디 혹은 비밀번호를 입력해주세요!", null);
             } else {

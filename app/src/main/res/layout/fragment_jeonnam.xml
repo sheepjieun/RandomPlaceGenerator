@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.JeonnamFragment">
+    tools:context="Recommend.fragment.JeonnamFragment">
 
 
     <LinearLayout
@@ -15,7 +15,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnJeonnamAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="전남 전체"
@@ -25,7 +25,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
-            android:id="@+id/gangjin"
+            android:id="@+id/btnJeonnamGangjin"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="강진군"
@@ -36,7 +36,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/gohung"
+            android:id="@+id/btnJeonnamGohung"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="고흥군"
@@ -47,7 +47,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/gokseong"
+            android:id="@+id/btnJeonnamGokseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="곡성군"
@@ -58,7 +58,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/gwangyang"
+            android:id="@+id/btnJeonnamGwangyang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="광양시"
@@ -69,7 +69,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/gurye"
+            android:id="@+id/btnJeonnamGurye"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="구례군"
@@ -80,7 +80,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/naju"
+            android:id="@+id/btnJeonnamNaju"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="나주시"
@@ -91,7 +91,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/damyang"
+            android:id="@+id/btnJeonnamDamyang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="담양군"
@@ -102,7 +102,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/mokpo"
+            android:id="@+id/btnJeonnamMokpo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="목포시"
@@ -113,7 +113,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/muan"
+            android:id="@+id/btnJeonnamMuan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="무안군"
@@ -124,7 +124,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/boseong"
+            android:id="@+id/btnJeonnamBoseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="보성군"
@@ -135,7 +135,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/suncheon"
+            android:id="@+id/btnJeonnamSuncheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="순천시"
@@ -155,7 +155,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/sinan"
+            android:id="@+id/btnJeonnamSinan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="신안군"
@@ -166,7 +166,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/yeosu"
+            android:id="@+id/btnJeonnamYeosu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="여수시"
@@ -177,7 +177,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/yeonggwang"
+            android:id="@+id/btnJeonnamYeonggwang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="영광군"
@@ -188,7 +188,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/yeongam"
+            android:id="@+id/btnJeonnamYeongam"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="영암군"
@@ -199,7 +199,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/wando"
+            android:id="@+id/btnJeonnamWando"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="완도군"
@@ -210,7 +210,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/jangseong"
+            android:id="@+id/btnJeonnamJangseong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="장성군"
@@ -221,7 +221,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/jangheung"
+            android:id="@+id/btnJeonnamJangheung"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="장흥군"
@@ -232,7 +232,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/jindo"
+            android:id="@+id/btnJeonnamJindo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="진도군"
@@ -243,7 +243,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/hamyang"
+            android:id="@+id/btnJeonnamHamyang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="함양군"
@@ -254,7 +254,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/haenam"
+            android:id="@+id/btnJeonnamHaenam"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="해남군"
@@ -265,7 +265,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/hwasun"
+            android:id="@+id/btnJeonnamHwasun"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="화순군"

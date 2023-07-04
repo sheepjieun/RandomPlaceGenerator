@@ -14,18 +14,54 @@ import com.example.mobileproject.Recommend.activitiy.RecommendActivity3;
 
 public class SeoulFragment extends Fragment implements View.OnClickListener{
 
+    int[] buttonIds = new int[]{
+            R.id.btnSeoulAll,
+            R.id.btnSeoulGangnam,
+            R.id.btnSeoulGangdong,
+            R.id.btnSeoulGangbuk,
+            R.id.btnSeoulGangseo,
+            R.id.btnSeoulGwanak,
+            R.id.btnSeoulGwangjin,
+            R.id.btnSeoulGuro,
+            R.id.btnSeoulGeumcheon,
+            R.id.btnSeoulNowon,
+            R.id.btnSeoulDobong,
+            R.id.btnSeoulDongdaemun,
+            R.id.btnSeoulDongjak,
+            R.id.btnSeoulMapo,
+            R.id.btnSeoulSeodaemun,
+            R.id.btnSeoulSeocho,
+            R.id.btnSeoulSeongdong,
+            R.id.btnSeoulSeongbuk,
+            R.id.btnSeoulSongpa,
+            R.id.btnSeoulYangcheon,
+            R.id.btnSeoulYeongdeungpo,
+            R.id.btnSeoulYongsan,
+            R.id.btnSeoulEunpyeong,
+            R.id.btnSeoulJongno,
+            R.id.btnSeoulJunggu,
+            R.id.btnSeoulJungnang
+    };
+
+    Button[] buttons = new Button[26];
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View root = inflater.inflate(R.layout.fragment_seoul, container, false);
-        Button btn_seoul1 = root.findViewById(R.id.seoul1);
-        btn_seoul1.setOnClickListener(this);
+        for(int i = 0; i<buttonIds.length; i++){
+            buttons[i] = root.findViewById(buttonIds[i]);
+            buttons[i].setOnClickListener(this);
+        }
         return root;
     }
 
     //서울 전체 누를 시 다음 화면으로 넘어감
     public void onClick(View view) {
+        if(view.getId() == R.id.btnSeoulAll)
+            RecommendActivity3.selected_region += "";
+        else{
+            RecommendActivity3.selected_region += ((Button) view).getText().toString();
+        }
         Intent intent = new Intent(getActivity(), RecommendActivity2.class);
-        RecommendActivity3.selected_region = "서울시";
         startActivity(intent);
     }
 }

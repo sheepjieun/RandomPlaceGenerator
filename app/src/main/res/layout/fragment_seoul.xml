@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Recommend.fragment.SeoulFragment">
+    tools:context="Recommend.fragment.SeoulFragment">
 
     <LinearLayout
         android:id="@+id/layout1"
@@ -14,7 +14,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <Button
-            android:id="@+id/seoul1"
+            android:id="@+id/btnSeoulAll"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="서울 전체"
@@ -24,6 +24,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulGangnam"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="강남구"
@@ -33,6 +34,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulGangdong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="강동구"
@@ -42,6 +44,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulGangbuk"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="강북구"
@@ -51,6 +54,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulGangseo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="강서구"
@@ -60,6 +64,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulGwanak"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="관악구"
@@ -69,6 +74,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulGwangjin"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="광진구"
@@ -78,6 +84,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulGuro"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="구로구"
@@ -87,6 +94,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulGeumcheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="금천구"
@@ -96,6 +104,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulNowon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="노원구"
@@ -105,6 +114,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulDobong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="도봉구"
@@ -114,6 +124,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulDongdaemun"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="동대문구"
@@ -123,6 +134,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulDongjak"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="동작구"
@@ -142,6 +154,7 @@
         app:layout_constraintLeft_toRightOf="@+id/layout1"
         app:layout_constraintTop_toTopOf="parent">
         <Button
+            android:id="@+id/btnSeoulMapo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="마포구"
@@ -151,6 +164,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulSeodaemun"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="서대문구"
@@ -160,6 +174,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulSeocho"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="서초구"
@@ -169,6 +184,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulSeongdong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="성동구"
@@ -178,6 +194,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulSeongbuk"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="성북구"
@@ -187,6 +204,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulSongpa"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="송파구"
@@ -196,6 +214,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulYangcheon"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="양천구"
@@ -205,6 +224,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulYeongdeungpo"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="영등포구"
@@ -214,6 +234,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulYongsan"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="용산구"
@@ -223,6 +244,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulEunpyeong"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="은평구"
@@ -232,6 +254,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulJongno"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="종로구"
@@ -241,6 +264,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulJunggu"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="중구"
@@ -250,6 +274,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"/>
         <Button
+            android:id="@+id/btnSeoulJungnang"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:text="중랑구"

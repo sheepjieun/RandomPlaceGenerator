@@ -30,6 +30,9 @@ public class ResetPasswordActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
 
+        //액션바 타이틀, 뒤로가기
+        setupActionBar("비밀번호 찾기", true);
+
         tv_id = findViewById(R.id.tv_id);
         et_newPassword = findViewById(R.id.et_newPassword);
         et_newPasswordCheck = findViewById(R.id.et_newPasswordCheck);
